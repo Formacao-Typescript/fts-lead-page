@@ -1,0 +1,136 @@
+---
+import Layout from '../layouts/Layout.astro'
+import Card from '../components/Card.astro'
+---
+
+<Layout title="Formação TypeScript">
+  <main>
+    <h1>Formação Typescript <span class="text-gradient">Typescript</span></h1>
+    <p class="instructions">A formação mais pica de TS com o melhor professor do mundo!</p>
+
+    <div id="countdown" class="countdown">
+      <span id="days" class="countdown-item">
+        <span class="label">dias</span>
+        <span class="value">2d</span></span
+      >
+      <span id="hours" class="countdown-item">
+        <span class="label">horas</span>
+        <span class="value">22</span></span
+      >
+      <span id="minutes" class="countdown-item">
+        <span class="label">minutos</span>
+        <span class="value">03</span></span
+      >
+      <span id="seconds" class="countdown-item">
+        <span class="label">segundos</span>
+        <span class="value">21</span></span
+      >
+    </div>
+    <!-- <Card
+      href="https://docs.astro.build/"
+      title="Documentation"
+      body="Learn how Astro works and explore the official API docs."
+    /> -->
+  </main>
+</Layout>
+
+<style lang="scss">
+  main {
+    margin: auto;
+    padding: 1rem;
+    width: 800px;
+    max-width: calc(100% - 2rem);
+    color: white;
+    font-size: 20px;
+    line-height: 1.6;
+    background: blue;
+  }
+  h1 {
+    font-size: 4rem;
+    font-weight: 700;
+    line-height: 1;
+    text-align: center;
+    margin-bottom: 1em;
+  }
+
+  .countdown {
+    width: 95%;
+    height: 400px;
+    background: red;
+
+    &-item {
+      display: flex;
+      flex-direction: column-reverse;
+      width: 25%;
+      text-align: center;
+      vertical-align: middle;
+      line-height: 400px;
+      background: yellow;
+
+      .label {
+        font-size: 1.5rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        margin-bottom: 0.5em;
+      }
+
+      .value {
+        font-size: 6rem;
+        font-weight: 700;
+      }
+    }
+  }
+
+  .text-gradient {
+    background-image: var(--accent-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 400%;
+    background-position: 0%;
+  }
+  /* .link-card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
+    gap: 2rem;
+    padding: 0;
+  } */
+</style>
+
+<!-- <script src="//send.hotmart.com/static/js/recaptcha.min.js"></script> -->
+<!-- <form klicksend-form-id="PwuAB4G" method="post" action="//handler.send.hotmart.com/subscription/PwuAB4G">
+  <input type="email" autocomplete="off" name="email" id="email" placeholder="Email" value="" required />
+  <input type="text" autocomplete="off" name="phone" id="phone" placeholder="Telefone" value="" />
+  <div klicksend-gdpr-text style="font-size: 10px; color: #86919a; margin-bottom: 5px; text-align: left;">
+    <p>
+      <html>
+        <body
+          ><p>
+            Esses dados serão utilizados para entrarmos em contato com você e disponibilizarmos mais conteúdos e
+            ofertas. Caso você não queira mais receber os nosso emails, cada email que você receber, incluirá ao final,
+            um link que poderá ser usado para remover o seu email da nossa lista de distribuição.
+          </p></body>
+      </html>
+    </p><p>
+      Para mais informações, acesse:<a
+        href="https://klickpages.com.br/politica-de-privacidade/"
+        target="_blank"
+        rel="noopener">https://klickpages.com.br/politica-de-privacidade/</a
+      >
+    </p>
+  </div><div style="width: 100%; display: flex">
+    <input
+      type="checkbox"
+      autocomplete="off"
+      name="gdpr"
+      id="gdpr"
+      placeholder="Concordo em receber os e-mails"
+      value="Concordo em receber os e-mails"
+      required
+    />
+    <label for="gdpr"> Concordo em receber os e-mails </label>
+  </div>
+  <div style="position: absolute; left: -5000px;" aria-hidden="true">
+    <input type="text" name="b_PwuAB4G" tabindex="-1" value="" />
+  </div>
+  <button klicksend-form-submit-id="PwuAB4G" class="g-recaptcha">Enviar</button>
+</form> -->
