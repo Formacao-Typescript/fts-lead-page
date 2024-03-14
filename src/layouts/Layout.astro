@@ -4,6 +4,7 @@ interface Props {
 }
 
 const { title } = Astro.props
+const currentYear = new Date().getFullYear()
 ---
 
 <!doctype html>
@@ -24,12 +25,26 @@ const { title } = Astro.props
   </head>
   <body>
     <slot />
+    <span class="test"></span>
   </body>
   <footer>
-    <p>Footer</p>
+    <div>
+      <span
+        >© {currentYear}
+        <a target="_blank">Lucas Santos</a>. Todos os direitos reservados.
+      </span>
+      <ul>
+        <li><a target="_blank">Sobre a Formação</a></li>
+        <li><a target="_blank"></a></li>
+        <li><a target="_blank"></a></li>
+        <li><a target="_blank"></a></li>
+        <li><a target="_blank"></a></li>
+        <li><a target="_blank"></a></li>
+      </ul>
+    </div>
   </footer>
 </html>
-<style is:global>
+<style is:global lang="scss">
   @import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Quantico:ital,wght@0,400;0,700;1,400;1,700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
 
   :root {
@@ -50,7 +65,7 @@ const { title } = Astro.props
     --bg-mid-purple: #100523;
     --bg-purple: #180b2d;
     --bg-black: #000016;
-    --background-gradient: linear-gradient(45deg, var(--bg-purple), var(--bg-dark-purple));
+    --background-gradient: linear-gradient(135deg, var(--bg-black) 80%, var(--accent-dark-blue));
     /* other */
     --accent-dark-blue: #006dfb;
     --accent-dark-purple: #6002fc;
@@ -59,6 +74,56 @@ const { title } = Astro.props
     --accent-redish: #dd2900;
   }
 
+  footer {
+    background-color: rgba(var(--accent-dark-blue), 0.7);
+    border-radius: 8px;
+    padding-right: 40px;
+
+    div {
+      width: 100%;
+      margin-left: auto;
+      margin-right: auto;
+      max-width: 95vw;
+      padding: {
+        top: 2px;
+        bottom: 2px;
+        left: 4px;
+        right: 4px;
+      }
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      span {
+        font-size: 0.8rem;
+        color: black;
+        a {
+          color: black;
+          text-decoration: none;
+          font-weight: bold;
+        }
+      }
+    }
+
+    ul {
+      display: flex;
+      list-style: none;
+      flex-wrap: wrap;
+      align-items: center;
+      font-size: 0.9rem;
+      color: black;
+      li {
+        margin: 0 8px;
+        a {
+          color: rgb(68, 68, 68);
+          text-decoration: none;
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
   .font-subtitle-alt {
     font-family: 'Montserrat', sans-serif;
     font-optical-sizing: auto;
@@ -90,11 +155,12 @@ const { title } = Astro.props
     font-style: normal;
   }
 
-  html {
+  html,
+  body {
     font-family: 'Ubuntu', 'Lato', sans-serif;
-    background: #13151a;
-    background-size: 224px;
     width: 100%;
-    height: 100%;
+    margin: 0;
+    padding: 0;
+    color: white;
   }
 </style>
