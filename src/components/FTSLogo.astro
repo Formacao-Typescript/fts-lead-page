@@ -1,0 +1,56 @@
+<div class="logo">
+  <div class="logo-background">
+    <div class="logo-content">
+      <span class="logo-content-slashes">//</span>
+      <span class="logo-content-text">formação</span>
+      <span class="logo-content-ts">TS</span>
+    </div>
+  </div>
+</div>
+
+<style lang="scss">
+  .logo {
+    --logo-background: #141436;
+    --background-gradient: linear-gradient(to bottom, #04A9CC, #0164FD);
+    --slash-gradient: linear-gradient(to bottom, #00AAC9, #008CE7);
+    --ts-gradient: linear-gradient(to bottom, #008CE7, #006BFD);
+    display: inline-block;
+    font-size: 4rem;
+
+    &-background {
+      background: var(--background-gradient);
+      border-radius: 24px;
+      padding: 4px;
+    }
+
+    &-content {
+      border-radius: 24px;
+      background: var(--logo-background);
+      color: white;
+      font-family: 'Red Hat Display', sans-serif;
+      box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+      padding: 0 24px;
+
+      &-slashes {
+        background: var(--slash-gradient);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-weight: bold;
+        overflow: show;
+        padding-left: 6px;
+        letter-spacing: 0.7rem;
+      }
+
+      &-text {
+        font-weight: bold;
+        letter-spacing: 0.3rem;
+      }
+
+      &-ts {
+        background: var(--ts-gradient);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+    }
+  }
+</style>

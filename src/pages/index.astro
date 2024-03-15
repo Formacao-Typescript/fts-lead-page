@@ -1,7 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro'
 import Countdown from '../components/Countdown.astro'
-import SectionCard from '../components/SectionCard.astro'
+import FTSLogo from '../components/FTSLogo.astro'
 import Form from '../components/Form.astro'
 import FancyBackground from '../components/FancyBackground.astro'
 ---
@@ -11,6 +11,7 @@ import FancyBackground from '../components/FancyBackground.astro'
     <section id="hero-section">
       <FancyBackground>
         <div class="content">
+          <FTSLogo />
           <h1 class="font-title">formação TS <span class="text-gradient">Typescript</span></h1>
           <p class="instructions font-subtitle-alt">A formação mais pica de TS com o melhor professor do mundo!</p>
   
@@ -19,7 +20,7 @@ import FancyBackground from '../components/FancyBackground.astro'
       </FancyBackground>
     </section>
     <section id="info-section" class="font-body">
-      <SectionCard href="#" title="teste" body="teste">
+      <div class="section-card">
         <h2>Conteúdo</h2>
         <p>
           A formação de TypeScript é um curso completo que vai te ensinar a dominar a linguagem de programação mais
@@ -31,7 +32,7 @@ import FancyBackground from '../components/FancyBackground.astro'
           generics, decorators, e muito mais. Além disso, você vai aprender a usar o TypeScript em projetos reais, com
           exemplos práticos e exercícios para fixar o conteúdo.
         </p>
-      </SectionCard>
+      </div>
     </section>
     <section id="form-section">
       <h2>Inscreva-se</h2>
@@ -62,9 +63,29 @@ import FancyBackground from '../components/FancyBackground.astro'
   #hero-section {
     background: var(--background-gradient);
   }
-
+  
   #info-section {
-    background: white;
+    color: black;
+    background: #fff;
+    padding: 20px;
+    border-left: 20px solid var(--branding-blue);
+
+    .section-card {
+      max-width: 80%;
+      margin: auto;
+      border: 10px solid var(--branding-green);
+      border-radius: 20px;
+      padding: 20px;
+    }
+  }
+
+  #form-section {
+    background: var(--bg-purple);
+    padding: 20px;
+    border-left: 20px solid var(--branding-yellow);
+    h2 {
+      margin: 0;
+    }
   }
 
   h1 {
