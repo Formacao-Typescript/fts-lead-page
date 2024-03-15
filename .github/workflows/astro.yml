@@ -27,7 +27,7 @@ concurrency:
 env:
   BUILD_PATH: "." # default value when not using subfolders
   # BUILD_PATH: subfolder
-  PUBLIC_TARGET_DATE: ${{ secrets.PUBLIC_TARGET_DATE }}
+  PUBLIC_TARGET_DATE: ${{ vars.PUBLIC_TAGET_DATE }}
 
 jobs:
   build:
