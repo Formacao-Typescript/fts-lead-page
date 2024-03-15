@@ -11,8 +11,9 @@
 
 <style lang="scss">
   @keyframes move {
-    0%, 100% {
-      // to top right 
+    0%,
+    100% {
+      // to top right
       top: var(--start-y);
       // left: var(--start-x + 50);
     }
@@ -34,7 +35,7 @@
   }
 
   .background {
-    background: var(--background-gradient);
+    background: var(--bg-dark-purple);
     position: relative;
     overflow: hidden;
     z-index: 0;
@@ -45,7 +46,7 @@
     z-index: 1;
   }
 
-  .bubble{
+  .bubble {
     width: var(--size);
     height: var(--size);
     position: absolute;

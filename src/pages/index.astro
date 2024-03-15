@@ -4,51 +4,48 @@ import Countdown from '../components/Countdown.astro'
 import FTSLogo from '../components/FTSLogo.astro'
 import Form from '../components/Form.astro'
 import FancyBackground from '../components/FancyBackground.astro'
+import Info from '../components/Info.astro'
 ---
 
-<Layout title="Formação TypeScript">
+<Layout title="Formação TS">
   <main>
     <section id="hero-section">
       <FancyBackground>
         <div class="content">
-          <FTSLogo />
-          <h1 class="font-title">formação TS <span class="text-gradient">Typescript</span></h1>
+          <div class="logo">
+            <FTSLogo />
+          </div>
           <p class="instructions font-subtitle-alt">A formação mais pica de TS com o melhor professor do mundo!</p>
-  
+          <hr class="faded" />
           <Countdown />
+          <hr class="faded" />
         </div>
+        <Info />
+        <section id="form-section">
+          <h2>Inscreva-se</h2>
+          <Form />
+        </section>
       </FancyBackground>
     </section>
-    <section id="info-section" class="font-body">
-      <div class="section-card">
-        <h2>Conteúdo</h2>
-        <p>
-          A formação de TypeScript é um curso completo que vai te ensinar a dominar a linguagem de programação mais
-          poderosa do mundo. Você vai aprender desde o básico até os conceitos mais avançados, com aulas práticas e
-          exemplos reais.
-        </p>
-        <p>
-          O curso é dividido em módulos, cada um com um tema específico. Você vai aprender sobre tipos, interfaces,
-          generics, decorators, e muito mais. Além disso, você vai aprender a usar o TypeScript em projetos reais, com
-          exemplos práticos e exercícios para fixar o conteúdo.
-        </p>
-      </div>
-    </section>
-    <section id="form-section">
-      <h2>Inscreva-se</h2>
-      <Form />
-    </section>
-    <!-- <Card
-      href="https://docs.astro.build/"
-      title="Documentation"
-      body="Learn how Astro works and explore the official API docs."
-      /> -->
   </main>
 </Layout>
 
 <style lang="scss">
   main {
     // background: var(--background-gradient);
+  }
+
+  .logo {
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    padding-top: 30px;
+    margin-bottom: 30px;
+  }
+
+  .instructions {
+    width: 100%;
+    text-align: center;
   }
 
   .content {
@@ -61,28 +58,12 @@ import FancyBackground from '../components/FancyBackground.astro'
     line-height: 1.6;
   }
   #hero-section {
-    background: var(--background-gradient);
-  }
-  
-  #info-section {
-    color: black;
-    background: #fff;
-    padding: 20px;
-    border-left: 20px solid var(--branding-blue);
-
-    .section-card {
-      max-width: 80%;
-      margin: auto;
-      border: 10px solid var(--branding-green);
-      border-radius: 20px;
-      padding: 20px;
-    }
+    // background: var(--background-gradient);
   }
 
   #form-section {
-    background: var(--bg-purple);
+    // background: var(--bg-dark-purple);
     padding: 20px;
-    border-left: 20px solid var(--branding-yellow);
     h2 {
       margin: 0;
     }
@@ -103,10 +84,4 @@ import FancyBackground from '../components/FancyBackground.astro'
     background-size: 400%;
     background-position: 0%;
   }
-  /* .link-card-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
-    gap: 2rem;
-    padding: 0;
-  } */
 </style>

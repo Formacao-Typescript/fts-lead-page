@@ -10,10 +10,10 @@
 
 <style lang="scss">
   .logo {
-    --logo-background: #141436;
-    --background-gradient: linear-gradient(to bottom, #04A9CC, #0164FD);
-    --slash-gradient: linear-gradient(to bottom, #00AAC9, #008CE7);
-    --ts-gradient: linear-gradient(to bottom, #008CE7, #006BFD);
+    --logo-background: #0b0b20;
+    --background-gradient: linear-gradient(to bottom, #04a9cc, #0164fd);
+    --slash-gradient: linear-gradient(to top, #00aac9, #008ce7);
+    --ts-gradient: linear-gradient(to bottom, #00aac9 30%, #006bfd);
     display: inline-block;
     font-size: 4rem;
 
@@ -42,14 +42,17 @@
       }
 
       &-text {
+        text-transform: lowercase;
         font-weight: bold;
         letter-spacing: 0.3rem;
       }
 
       &-ts {
+        text-transform: uppercase;
         background: var(--ts-gradient);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
+        font-weight: 900;
       }
     }
   }
