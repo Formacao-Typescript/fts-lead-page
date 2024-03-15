@@ -1,0 +1,98 @@
+<div class="background">
+  <span id="bubble-1" class="bubble"></span>
+  <span id="bubble-2" class="bubble"></span>
+  <span id="bubble-3" class="bubble"></span>
+  <span id="bubble-4" class="bubble"></span>
+  <span id="bubble-5" class="bubble"></span>
+  <div class="content-wrapper">
+    <slot />
+  </div>
+</div>
+
+<style lang="scss">
+  @keyframes move {
+    0%, 100% {
+      // to top right 
+      top: var(--start-y);
+      // left: var(--start-x + 50);
+    }
+    25% {
+      // to top left
+      top: calc(var(--start-y) - 50px);
+      // left: calc(var(--start-x) - 50px);
+    }
+    50% {
+      // to bottom left
+      top: calc(var(--start-y) - 100px);
+      // left: calc(var(--start-x) - 100px);
+    }
+    75% {
+      // to bottom right
+      top: calc(var(--start-y) - 50px);
+      // left: calc(var(--start-x) + 50px);
+    }
+  }
+
+  .background {
+    background: var(--background-gradient);
+    position: relative;
+    overflow: hidden;
+    z-index: 0;
+  }
+
+  .content-wrapper {
+    position: relative;
+    z-index: 1;
+  }
+
+  .bubble{
+    width: var(--size);
+    height: var(--size);
+    position: absolute;
+    background: radial-gradient(var(--bubble-color), transparent 60%);
+    border-radius: 50%;
+    z-index: 0;
+    top: var(--start-y);
+    left: var(--start-x);
+    animation: move 20s ease-in-out infinite;
+  }
+
+  #bubble-1 {
+    --size: 500px;
+    --start-x: 50px;
+    --start-y: 250px;
+    --bubble-color: #197bc0;
+  }
+
+  #bubble-2 {
+    --size: 150px;
+    --start-x: calc(100% - 100px);
+    --start-y: 150px;
+    --bubble-color: #dd2900;
+    opacity: 0.5;
+  }
+
+  #bubble-3 {
+    --size: 200px;
+    --start-x: 500px;
+    --start-y: 50px;
+    --bubble-color: #6002fc;
+    opacity: 0.7;
+  }
+
+  #bubble-4 {
+    --size: 300px;
+    --start-x: 56%;
+    --start-y: 42%;
+    --bubble-color: #6002fc;
+    opacity: 0.3;
+  }
+
+  #bubble-5 {
+    --size: 400px;
+    --start-x: -25%;
+    --start-y: -25%;
+    --bubble-color: #197bc0;
+    opacity: 0.5;
+  }
+</style>

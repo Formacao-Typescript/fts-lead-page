@@ -3,17 +3,20 @@ import Layout from '../layouts/Layout.astro'
 import Countdown from '../components/Countdown.astro'
 import SectionCard from '../components/SectionCard.astro'
 import Form from '../components/Form.astro'
+import FancyBackground from '../components/FancyBackground.astro'
 ---
 
 <Layout title="Formação TypeScript">
   <main>
     <section id="hero-section">
-      <div class="content">
-        <h1 class="font-title">formação TS <span class="text-gradient">Typescript</span></h1>
-        <p class="instructions font-subtitle-alt">A formação mais pica de TS com o melhor professor do mundo!</p>
-
-        <Countdown />
-      </div>
+      <FancyBackground>
+        <div class="content">
+          <h1 class="font-title">formação TS <span class="text-gradient">Typescript</span></h1>
+          <p class="instructions font-subtitle-alt">A formação mais pica de TS com o melhor professor do mundo!</p>
+  
+          <Countdown />
+        </div>
+      </FancyBackground>
     </section>
     <section id="info-section" class="font-body">
       <SectionCard href="#" title="teste" body="teste">
@@ -44,7 +47,7 @@ import Form from '../components/Form.astro'
 
 <style lang="scss">
   main {
-    background: var(--background-gradient);
+    // background: var(--background-gradient);
   }
 
   .content {
