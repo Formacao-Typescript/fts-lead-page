@@ -6,7 +6,7 @@
     <p>
       <html>
         <body
-          ><p>
+          ><p class="disclaimer">
             Esses dados serão utilizados para entrarmos em contato com você e disponibilizarmos mais conteúdos e
             ofertas. Caso você não queira mais receber os nosso emails, cada email que você receber, incluirá ao final,
             um link que poderá ser usado para remover o seu email da nossa lista de distribuição.
@@ -14,27 +14,68 @@
         >
       </html>
     </p><p>
-      Para mais informações, acesse:<a
+      Para mais informações, acesse a<a
         href="https://klickpages.com.br/politica-de-privacidade/"
         target="_blank"
-        rel="noopener">https://klickpages.com.br/politica-de-privacidade/</a
+        rel="noopener">política de privacidade</a
       >
     </p>
   </div>
-  <div class="form-checkbox">
-    <input
-      type="checkbox"
-      autocomplete="off"
-      name="gdpr"
-      id="gdpr"
-      placeholder="Concordo em receber os e-mails"
-      value="Concordo em receber os e-mails"
-      required
-    />
-    <label for="gdpr"> Concordo em receber os e-mails </label>
-  </div>
-  <div style="position: absolute; left: -5000px;" aria-hidden="true">
-    <input type="text" name="b_PwuAB4G" tabindex="-1" value="" />
-  </div>
   <button klicksend-form-submit-id="PwuAB4G" class="g-recaptcha">Enviar</button>
 </form>
+
+<style lang="scss">
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+
+  input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+
+  .form-checkbox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px 0;
+  }
+
+  .form-checkbox input {
+    margin: 0 10px 0 0;
+  }
+
+  .form-checkbox label {
+    font-size: 14px;
+  }
+
+  .gdpr-text {
+    font-size: 14px;
+    text-align: center;
+  }
+
+  .gdpr-text a {
+    color: #000;
+  }
+
+  .g-recaptcha {
+    padding: 10px 20px;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+</style>
