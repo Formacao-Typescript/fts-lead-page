@@ -1,4 +1,4 @@
-<div class="logo">
+<div class="logo" data-scale="4x"> <!-- TODO: can use this as astro prop if needed -->
   <div class="logo-background">
     <div class="logo-content">
       <span class="logo-content-slashes">//</span>
@@ -9,6 +9,19 @@
 </div>
 
 <style lang="scss">
+  // note to lucas: any size is valid keeping the proportion "N rem/N px"
+  .logo[data-scale='4x'] {
+    font-size: 4rem;
+    .logo-background {
+      padding: 4px;
+    }
+  }
+  .logo[data-scale='2x'] {
+    font-size: 2rem;
+    .logo-background {
+      padding: 2px;
+    }
+  }
   .logo {
     --logo-background: #0b0b20;
     --background-gradient: linear-gradient(to bottom, #04a9cc, #0164fd);
@@ -19,12 +32,12 @@
 
     &-background {
       background: var(--background-gradient);
-      border-radius: 24px;
+      border-radius: 0.375em;
       padding: 4px;
     }
 
     &-content {
-      border-radius: 24px;
+      border-radius: 0.375em;
       background: var(--logo-background);
       color: white;
       font-family: 'Red Hat Display', sans-serif;
