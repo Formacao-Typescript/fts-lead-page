@@ -22,8 +22,11 @@ import Info from '../components/Info.astro'
         </div>
         <Info />
         <section id="form-section">
-          <h2>Inscreva-se</h2>
-          <Form />
+          <div>
+            <h2>Inscreva-se</h2>
+            <Form />
+          </div>
+          <img src="/assets/talk-2.jpg" alt="Lucas palestrando" />
         </section>
       </FancyBackground>
     </section>
@@ -62,6 +65,13 @@ import Info from '../components/Info.astro'
   }
 
   #form-section {
+    display: flex;
+
+    img {
+      width: 50%;
+      object-fit: cover;
+      border-radius: 30% 70% 40% 50%;
+    }
     // background: var(--bg-dark-purple);
     padding: 20px;
     h2 {
@@ -84,4 +94,5 @@ import Info from '../components/Info.astro'
     background-size: 400%;
     background-position: 0%;
   }
+
 </style>
