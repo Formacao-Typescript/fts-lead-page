@@ -9,7 +9,22 @@
 </div>
 
 <style lang="scss">
-  // note to lucas: any size is valid keeping the proportion "N rem/N px"
+  /*
+  note to lucas: any size is valid keeping the proportion "N rem/N px" for font-size/border-size. 
+  To implement this the CSS works, but the JS doesn't for some reason
+  js:   
+    const logo = document.querySelector('.logo');
+    const scale = logo.dataset.scale || '4';
+    logo.style.setProperty('--scale', scale);
+  css: 
+    .logo {
+      // --scale: 4;
+      font-size: calc(1rem * var(--scale, 1));
+      .logo-background {
+        padding: calc(1px * var(--scale, 1));
+      }
+  }
+  */
   .logo[data-scale='4x'] {
     font-size: 4rem;
     .logo-background {
