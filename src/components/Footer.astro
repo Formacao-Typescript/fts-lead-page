@@ -25,6 +25,7 @@ const currentYear = new Date().getFullYear()
 <style lang="scss">
     footer {
     background-color: var(--bg-black);
+    padding-right: 78px; // captcha badge
 
     a:hover {
       text-decoration: underline;
@@ -51,6 +52,15 @@ const currentYear = new Date().getFullYear()
           color: #eee;
           text-decoration: none;
           font-weight: bold;
+        }
+      }
+
+      @media(max-width: 768px) {
+        flex-direction: column;
+        align-items: center;
+        padding-top: 16px;
+        span {
+          margin-bottom: 8px;
         }
       }
     }
