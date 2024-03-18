@@ -15,8 +15,8 @@
 <style lang="scss">
 
   .background {
-    --bg-color-1: 4, 169, 204;
-    --bg-color-2: 1, 100, 253;
+    --bg-color-1: 4, 169, 204; // #04a9cc 
+    --bg-color-2: 1, 100, 253; // #0164fd
 
     background: var(--bg-dark-purple);
     position: relative;
@@ -41,6 +41,7 @@
 
       .img {
         background-size: cover;
+        height: calc(100svh - 50.5px);
         &-overlay {
           width: 100%;
           height: 100%;
@@ -48,7 +49,6 @@
       }
       > .img:nth-child(1) {
         width: 60%;
-        height: 100svh;
         z-index: 2;
         background-image: linear-gradient(to bottom, rgba(var(--bg-color-1), 0.1), rgba(var(--bg-color-2), 0.3)),
     url('/assets/placeholder-bg-left-xl.png');
@@ -60,7 +60,6 @@
       }
       > .img:nth-child(2) {
         width: 40%;
-        height: 100svh;
         z-index: 1;
         // background: red;
         background-image: linear-gradient(to bottom, rgba(var(--bg-color-1), 0.2), rgba(var(--bg-color-2), 0.3)),
