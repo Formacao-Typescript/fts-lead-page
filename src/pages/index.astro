@@ -1,26 +1,24 @@
 ---
 import Layout from '../layouts/Layout.astro'
-import Countdown from '../components/Countdown.astro'
+import Countdown from '../components/SmallCountdown.astro'
 import FTSLogo from '../components/FTSLogo.astro'
 import Form from '../components/Form.astro'
 import FancyBackground from '../components/FancyBackground.astro'
 import Info from '../components/Info.astro'
 ---
 
-<Layout title="Formação TS">
+<Layout title="Evento - Formação TS">
   <main>
     <section id="hero-section">
       <FancyBackground>
         <div class="content">
           <div class="logo">
-            <FTSLogo />
+            <FTSLogo scale="2x" />
           </div>
-          <p class="instructions font-subtitle-alt">A formação mais pica de TS com o melhor professor do mundo!</p>
-          <hr class="faded" />
+          <h1 class="instructions font-subtitle-alt">A formação mais pica de TS com o melhor professor do mundo!</h1>
           <Countdown />
-          <hr class="faded" />
         </div>
-        <Info />
+        <!-- <Info /> -->
         <section id="form-section">
           <div>
             <h2>Inscreva-se</h2>
@@ -38,9 +36,17 @@ import Info from '../components/Info.astro'
     // background: var(--background-gradient);
   }
 
+  .content {
+    margin: auto;
+    padding: 1rem;
+    width: 800px;
+    max-width: calc(100% - 2rem);
+    color: white;
+    font-size: 20px;
+    line-height: 1.6;
+    background: linear-gradient(to right, transparent, black, transparent);
+  }
   .logo {
-    width: 100%;
-    margin: 0 auto;
     text-align: center;
     padding-top: 30px;
     margin-bottom: 30px;
@@ -51,15 +57,7 @@ import Info from '../components/Info.astro'
     text-align: center;
   }
 
-  .content {
-    margin: auto;
-    padding: 1rem;
-    width: 800px;
-    max-width: calc(100% - 2rem);
-    color: white;
-    font-size: 20px;
-    line-height: 1.6;
-  }
+
   #hero-section {
     // background: var(--background-gradient);
   }
@@ -80,19 +78,14 @@ import Info from '../components/Info.astro'
   }
 
   h1 {
-    font-size: 4rem;
+    font-size: 3rem;
     font-weight: 700;
     line-height: 1;
     text-align: center;
     margin-bottom: 1em;
-  }
-
-  .text-gradient {
-    background-image: var(--accent-gradient);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-size: 400%;
-    background-position: 0%;
+    
+    // TODO: test with and without this later :)  --- it makes a big difference, trust me 
+    letter-spacing: -0.1rem;
   }
 
 </style>
