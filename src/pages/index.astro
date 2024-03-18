@@ -15,7 +15,8 @@ import Info from '../components/Info.astro'
           <div class="logo">
             <FTSLogo scale="2x" />
           </div>
-          <h1 class="instructions font-subtitle-alt">A formação mais pica de TS com o melhor professor do mundo!</h1>
+          <h1 class="copy font-subtitle-alt">A formação mais pica de TS com o melhor professor do mundo!</h1>
+          <h2 class="sub-copy">Um curso completo que vai te ensinar a usar a linguagem de programação mais foda do mundo</h2>
           <Countdown />
         </div>
         <!-- <Info /> -->
@@ -48,16 +49,6 @@ import Info from '../components/Info.astro'
     margin-bottom: 30px;
   }
 
-  .instructions {
-    width: 100%;
-    text-align: center;
-  }
-
-
-  #hero-section {
-    // width: 100%;
-  }
-
   #form-section {
     display: flex;
 
@@ -73,7 +64,7 @@ import Info from '../components/Info.astro'
     }
   }
 
-  h1 {
+  h1.copy {
     font-size: 3rem;
     font-weight: 700;
     line-height: 1;
@@ -82,6 +73,16 @@ import Info from '../components/Info.astro'
     
     // TODO: test with and without this later :)  --- it makes a big difference, trust me 
     letter-spacing: -0.1rem;
+  }
+
+  h2.sub-copy {
+    margin: 0 auto;
+    font-size: 1.2rem;
+    font-weight: 400;
+    line-height: 1.2;
+    text-align: center;
+    margin-bottom: 2em;
+    max-width: 500px;
   }
 
 </style>
