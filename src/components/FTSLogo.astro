@@ -1,4 +1,12 @@
-<div class="logo" data-scale="4x"> <!-- TODO: can use this as astro prop if needed -->
+---
+interface Props {
+  scale: '2x' | '4x';
+}
+
+const { scale } = Astro.props;
+---
+
+<div class="logo" data-scale={scale}> <!-- TODO: can use this as astro prop if needed -->
   <div class="logo-background">
     <div class="logo-content">
       <span class="logo-content-slashes">//</span>
