@@ -4,7 +4,7 @@ interface Props {
 }
 
 const { title } = Astro.props
-const currentYear = new Date().getFullYear()
+import Footer from '../components/Footer.astro';
 ---
 
 <!doctype html>
@@ -33,26 +33,7 @@ const currentYear = new Date().getFullYear()
   <body>
     <slot />
   </body>
-  <footer>
-    <div>
-      <span
-        >© {currentYear}
-        <a target="_blank" href="https://formacaots.com.br">Formação TypeScript</a>. Todos os direitos reservados.
-      </span>
-      <ul>
-        <li><a target="_blank" href="https://formacaots.com.br">Sobre a Formação</a></li>
-        <li><a target="_blank" href="https://twitter.lsantos.dev"><i class="fa-brands fa-x-twitter"></i></a></li>
-        <li><a target="_blank" href="https://linkedin.lsantos.dev"><i class="fa-brands fa-linkedin"></i></a></li>
-        <li><a target="_blank" href="https://instagram.lsantos.dev"><i class="fa-brands fa-instagram"></i></a></li>
-        <li>
-          <a target="_blank" href="https://chat.whatsapp.com/LHX2iNG32QC3kkjUdjq92R"
-            ><i class="fa-brands fa-whatsapp"></i></a
-          >
-        </li>
-        <li><a target="_blank" href="mailto:suporte@formacaots.com.br"><i class="fa-solid fa-envelope"></i></a></li>
-      </ul>
-    </div>
-  </footer>
+  <Footer />
 </html>
 <style is:global lang="scss">
   @import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Quantico:ital,wght@0,400;0,700;1,400;1,700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
@@ -87,57 +68,6 @@ const currentYear = new Date().getFullYear()
     --accent-red: #c80000;
   }
 
-  footer {
-    background-color: var(--bg-black);
-
-    a:hover {
-      text-decoration: underline;
-    }
-
-    div {
-      border-top: 1px solid rgba(255, 255, 255, 0.3);
-      width: 100%;
-      margin-left: auto;
-      margin-right: auto;
-      max-width: 95vw;
-      padding: {
-        top: 2px;
-        bottom: 2px;
-      }
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-
-      span {
-        font-size: 0.8rem;
-        color: #eee;
-        a {
-          color: #eee;
-          text-decoration: none;
-          font-weight: bold;
-        }
-      }
-    }
-
-    ul {
-      display: flex;
-      list-style: none;
-      flex-wrap: wrap;
-      align-items: center;
-      font-size: 0.9rem;
-      color: #eee;
-      li {
-        margin: 0 8px;
-        a {
-          color: #eeeeee;
-          text-decoration: none;
-          &:hover {
-            text-decoration: underline;
-          }
-        }
-      }
-    }
-  }
   .font-subtitle-alt {
     font-family: 'Montserrat', sans-serif;
     font-optical-sizing: auto;

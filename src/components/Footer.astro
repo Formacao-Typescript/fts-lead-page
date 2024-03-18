@@ -1,0 +1,77 @@
+---
+const currentYear = new Date().getFullYear()
+---
+
+<footer>
+  <div>
+    <span
+      >© {currentYear}
+      <a target="_blank" href="https://formacaots.com.br">Formação TypeScript</a>. Todos os direitos reservados.
+    </span>
+    <ul>
+      <li><a target="_blank" href="https://formacaots.com.br">Sobre a Formação</a></li>
+      <li><a target="_blank" href="https://twitter.lsantos.dev"><i class="fa-brands fa-x-twitter"></i></a></li>
+      <li><a target="_blank" href="https://linkedin.lsantos.dev"><i class="fa-brands fa-linkedin"></i></a></li>
+      <li><a target="_blank" href="https://instagram.lsantos.dev"><i class="fa-brands fa-instagram"></i></a></li>
+      <li>
+        <a target="_blank" href="https://chat.whatsapp.com/LHX2iNG32QC3kkjUdjq92R"
+          ><i class="fa-brands fa-whatsapp"></i></a
+        >
+      </li>
+      <li><a target="_blank" href="mailto:suporte@formacaots.com.br"><i class="fa-solid fa-envelope"></i></a></li>
+    </ul>
+  </div>
+</footer>
+<style lang="scss">
+    footer {
+    background-color: var(--bg-black);
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    div {
+      border-top: 1px solid rgba(255, 255, 255, 0.3);
+      width: 100%;
+      margin-left: auto;
+      margin-right: auto;
+      max-width: 95vw;
+      padding: {
+        top: 2px;
+        bottom: 2px;
+      }
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      span {
+        font-size: 0.8rem;
+        color: #eee;
+        a {
+          color: #eee;
+          text-decoration: none;
+          font-weight: bold;
+        }
+      }
+    }
+
+    ul {
+      display: flex;
+      list-style: none;
+      flex-wrap: wrap;
+      align-items: center;
+      font-size: 0.9rem;
+      color: #eee;
+      li {
+        margin: 0 8px;
+        a {
+          color: #eeeeee;
+          text-decoration: none;
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+</style>
