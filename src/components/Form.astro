@@ -2,89 +2,77 @@
 <form klicksend-form-id="PwuAB4G" method="post" action="https://handler.send.hotmart.com/subscription/PwuAB4G">
   <input type="email" autocomplete="off" name="email" id="email" placeholder="Email" value="" required />
   <input type="text" autocomplete="off" name="phone" id="phone" placeholder="Telefone" value="" />
-  <div klicksend-gdpr-text class="gdpr-text">
+  <!-- <div klicksend-gdpr-text class="gdpr-text">
     <p>
       <html>
-        <body
-          ><p class="disclaimer">
-            Esses dados serão utilizados para entrarmos em contato com você e disponibilizarmos mais conteúdos e
-            ofertas. Caso você não queira mais receber os nosso emails, cada email que você receber, incluirá ao final,
-            um link que poderá ser usado para remover o seu email da nossa lista de distribuição.
-          </p></body
-        >
+      <body
+      ><p class="disclaimer">
+        Esses dados serão utilizados para entrarmos em contato com você e disponibilizarmos mais conteúdos e
+        ofertas. Caso você não queira mais receber os nosso emails, cada email que você receber, incluirá ao final,
+        um link que poderá ser usado para remover o seu email da nossa lista de distribuição.
+      </p></body
+      >
       </html>
-    </p><p>
+    </p>
+    <p>
       Para mais informações, acesse a<a
-        href="https://klickpages.com.br/politica-de-privacidade/"
-        target="_blank"
-        rel="noopener">política de privacidade</a
+      href="https://klickpages.com.br/politica-de-privacidade/"
+      target="_blank"
+      rel="noopener">política de privacidade</a
       >
     </p>
-  </div>
-  <button klicksend-form-submit-id="PwuAB4G" class="g-recaptcha">Enviar</button>
+  </div> -->
+  <button klicksend-form-submit-id="PwuAB4G" class="g-recaptcha">Entrar agora!</button>
 </form>
 
 <style lang="scss">
   form {
+    width: 100%;
+    max-width: 600px;
+    
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 100%;
-    max-width: 400px;
+    gap: 10px;
     margin: 0 auto;
-    padding: 20px;
-    border-radius: 5px;
-  }
+    
+    input, button {
+      box-sizing: border-box;
+      width: 100%;
+      padding: 12px;
+      border-radius: 4px;
+      letter-spacing: 0.1em;
+      height: 48px;
+      transition: all ease-in-out 0.1s;
 
-  input {
-    width: 100%;
-    padding: 10px;
-    margin: 10px 0;
-    border: 1px solid #374151;
-    background: linear-gradient(to bottom, transparent, #374151);
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-    border-radius: 5px;
-  }
-
-  button {
-    width: 100%;
-    background: linear-gradient(to bottom, var(--accent-blue), var(--accent-dark-blue));
-    &:hover {
-      background: linear-gradient(to top, var(--accent-blue), var(--accent-dark-blue));
+      &:focus {
+        outline: 1px solid #006bfd;
+        transform: scale(1.05);
+      }
+    }
+    input {
+      // box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+      background: white;
+      
+      &::placeholder {
+        text-transform: uppercase;
+        color: #0B184A;
+      }
+    }
+    
+    button {
+      cursor: pointer;
+      color: white;
+      text-transform: uppercase;
+      background: linear-gradient(to right, #00aac9, #006bfd);
+      
+      &:hover {
+        background: linear-gradient(to right, #00aac9 30%, #006bfd);
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+        transform: scale(1.05);
+      }
     }
   }
-
-  .form-checkbox {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 10px 0;
-  }
-
-  .form-checkbox input {
-    margin: 0 10px 0 0;
-  }
-
-  .form-checkbox label {
-    font-size: 14px;
-  }
-
-  .gdpr-text {
-    font-size: 14px;
-    text-align: center;
-  }
-
-  .gdpr-text a {
-    color: #000;
-  }
-
-  .g-recaptcha {
-    padding: 10px 20px;
-    background-color: #000;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
+  
+  
 </style>
