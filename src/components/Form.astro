@@ -2,40 +2,31 @@
 <form klicksend-form-id="PwuAB4G" method="post" action="https://handler.send.hotmart.com/subscription/PwuAB4G">
   <div class="form-content">
     <!-- FIXME: why autocomplete off?? -->
-    <input type="email" autocomplete="off" name="email" id="email" placeholder="Email" value="" required />
-    <input type="text" autocomplete="off" name="phone" id="phone" placeholder="Telefone" value="" />
-    <button klicksend-form-submit-id="PwuAB4G" class="g-recaptcha">Entrar agora!</button>
+    <input type="email" autocomplete="on" name="email" id="email" placeholder="Email" value="" required />
+    <input type="text" autocomplete="on" name="phone" id="phone" placeholder="Telefone" value="" />
+    <button klicksend-form-submit-id="PwuAB4G" class="g-recaptcha">Quero participar!</button>
+    <div style="position: absolute; left: -5000px;" aria-hidden="true">
+      <input type="text" name="b_PwuAB4G" tabindex="-1" value="" />
+      <input
+        type="checkbox"
+        autocomplete="off"
+        name="gdpr"
+        id="gdpr"
+        placeholder=""
+        value="true"
+        tabindex="-1"
+        required
+        checked
+      />
+    </div>
   </div>
   <div klicksend-gdpr-text class="form-disclaimer">
-    Esses dados serão usados apenas para contato referente a conteúdo e ofertas da Formação TS. Cada email conterá um link para remoção da lista. Confira nossa 
-    <a
-    href="https://klickpages.com.br/politica-de-privacidade/"
-    target="_blank"
-    rel="noopener">política de privacidade
+    Esses dados serão usados apenas para contato referente a conteúdo e ofertas da Formação TS. Cada email conterá um
+    link para remoção da lista. Confira nossa
+    <a href="https://klickpages.com.br/politica-de-privacidade/" target="_blank" rel="noopener"
+      >política de privacidade
     </a>.
   </div>
-  <!-- <div klicksend-gdpr-text class="gdpr-text">
-    <p>
-      <html>
-      <body
-      ><p class="disclaimer">
-        Esses dados serão utilizados para entrarmos em contato com você e disponibilizarmos mais conteúdos e
-        ofertas. Caso você não queira mais receber os nosso emails, cada email que você receber, incluirá ao final,
-        um link que poderá ser usado para remover o seu email da nossa lista de distribuição.
-      </p></body
-      >
-      </html>
-    </p>
-    <p>
-      Para mais informações, acesse a<a
-      href="https://klickpages.com.br/politica-de-privacidade/"
-      target="_blank"
-      rel="noopener">política de privacidade</a
-      >
-    </p>
-  </div> -->
-
-  
 </form>
 
 <style lang="scss">
@@ -43,7 +34,7 @@
     width: 100%;
     max-width: 600px;
     margin: 0 auto;
-    
+
     .form-content {
       display: flex;
       align-items: center;
@@ -53,15 +44,18 @@
     }
 
     .form-disclaimer {
-      font-size: 0.8rem;
+      font-size: 0.6rem;
+      text-align: center;
+      color: #aaa;
       margin-top: 8px;
 
       a {
-        color: white;
+        color: #ccc;
       }
     }
-    
-    input, button {
+
+    input,
+    button {
       box-sizing: border-box;
       width: 100%;
       padding: 12px;
@@ -69,7 +63,7 @@
       letter-spacing: 0.1em;
       height: 48px;
       transition: all ease-in-out 0.1s;
-      
+
       &:focus {
         outline: 1px solid #006bfd;
         transform: scale(1.05);
@@ -78,19 +72,19 @@
     input {
       // box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
       background: white;
-      
+
       &::placeholder {
         text-transform: uppercase;
-        color: #0B184A;
+        color: #0b184a;
       }
     }
-    
+
     button {
       cursor: pointer;
       color: white;
       text-transform: uppercase;
       background: linear-gradient(to right, #00aac9, #006bfd);
-      
+
       &:hover {
         background: linear-gradient(to right, #00aac9 30%, #006bfd);
         box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
@@ -98,7 +92,7 @@
       }
     }
 
-    @media(max-width: 768px) {
+    @media (max-width: 768px) {
       .form-content {
         flex-direction: column;
         max-width: 400px;
@@ -108,6 +102,4 @@
       }
     }
   }
-  
-  
 </style>
