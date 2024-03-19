@@ -13,10 +13,14 @@ import Info from '../components/Info.astro'
       <FancyBackground>
         <div class="content">
           <div class="logo">
-            <FTSLogo scale="2x" />
+            <FTSLogo scale="4x" />
           </div>
-          <h1 class="copy font-subtitle-alt">A formação mais pica de TS com o melhor professor do mundo!</h1>
-          <h2 class="sub-copy">Um curso completo que vai te ensinar a usar a linguagem de programação mais foda do mundo</h2>
+          <h1 class="copy font-subtitle-alt">Seja mestre na tecnologia mais importante do momento!</h1>
+          <h2 class="sub-copy">
+            O treinamento que não vai apenas te ensinar profundamente <strong>TypeScript</strong>, mas também te
+            preparar para os desafios reais do mercado.
+          </h2>
+          <h2 class="sub-copy">Garanta sua vaga antes que seja tarde!</h2>
           <Countdown />
         </div>
         <!-- <Info /> -->
@@ -70,9 +74,10 @@ import Info from '../components/Info.astro'
     line-height: 1;
     text-align: center;
     margin-bottom: 1em;
-    
-    // TODO: test with and without this later :)  --- it makes a big difference, trust me 
+
+    // TODO: test with and without this later :)  --- it makes a big difference, trust me
     letter-spacing: -0.1rem;
+    text-shadow: 3px 3px 4px rgba(0, 0, 0, 0.5);
   }
 
   h2.sub-copy {
@@ -85,16 +90,15 @@ import Info from '../components/Info.astro'
     max-width: 500px;
   }
 
-  @media(max-width: 768px) {
+  @media (max-width: 768px) {
     h1.copy {
       font-size: 2.5rem;
     }
-   }
+  }
 
-  @media(max-width: 500px) {
+  @media (max-width: 500px) {
     h1.copy {
       font-size: 2rem;
     }
   }
-
 </style>
