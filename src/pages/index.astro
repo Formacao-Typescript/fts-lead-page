@@ -28,13 +28,27 @@ import SectionCard from '../components/SectionCard.astro'
           <Form />
         </section>
         <hr class="divider faded" />
+
         <section id="about-section">
           <SectionCard title="sobre-o-evento.md" columns={2}>
             <div slot="left">
-              <h1># Para quem é o evento?</h1>
-              <h2>## É para você que:</h2>
+              <h1 class="about-left-call">### Para quem é o evento?</h1>
+              <h2 class="about-left-title"># É para você que:</h2>
             </div>
             <div slot="right">teste 2</div>
+          </SectionCard>
+        </section>
+
+        <hr class="divider faded" />
+
+        <section id="author-section">
+          <SectionCard title="sobre-lucas.md" columns={2}>
+            <div slot="left">
+              <h1 class="about-left">Sobre mim</h1>
+            </div>
+            <div slot="right">
+              <img src="/assets/avatar.png" alt="Lucas Santos" />
+            </div>
           </SectionCard>
         </section>
       </FancyBackground>
@@ -43,8 +57,31 @@ import SectionCard from '../components/SectionCard.astro'
 </Layout>
 
 <style lang="scss">
+  #author-section {
+    margin-top: 30px;
+  }
   #about-section {
     margin-top: 50px;
+    margin-bottom: 20px;
+
+    h1.about-left-call {
+      font-weight: 700;
+      line-height: 1;
+      margin-bottom: 0;
+      font-size: 1.3em;
+      background: var(--trade-essential-gradient);
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    h2.about-left-title {
+      font-weight: 700;
+      line-height: 1;
+      margin-top: 0.3em;
+      margin-left: 0.8em;
+      font-size: 2em;
+      color: #ddd;
+    }
   }
   .divider {
     margin: 0 auto;

@@ -62,11 +62,11 @@
       border-radius: 4px;
       letter-spacing: 0.1em;
       height: 48px;
-      transition: all ease-in-out 0.1s;
+      transition: all ease-in-out 0.2s;
 
       &:focus {
-        outline: 1px solid #006bfd;
         transform: scale(1.05);
+        border-radius: 4px;
       }
     }
     input {
@@ -82,10 +82,10 @@
       cursor: pointer;
       color: white;
       text-transform: uppercase;
-      background: linear-gradient(to right, #00aac9, #006bfd);
+      background: var(--trade-intermediate-gradient);
 
       &:hover {
-        background: linear-gradient(to right, #00aac9 30%, #006bfd);
+        background: var(--trade-essential-gradient);
         box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
         transform: scale(1.05);
       }
