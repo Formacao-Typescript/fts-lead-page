@@ -30,7 +30,10 @@ import SectionCard from '../components/SectionCard.astro'
         <hr class="divider faded" />
         <section id="about-section">
           <SectionCard title="sobre-o-evento.md" columns={2}>
-            <div slot="left">teste</div>
+            <div slot="left">
+              <h1># Para quem é o evento?</h1>
+              <h2>## É para você que:</h2>
+            </div>
             <div slot="right">teste 2</div>
           </SectionCard>
         </section>
@@ -91,8 +94,6 @@ import SectionCard from '../components/SectionCard.astro'
     line-height: 1;
     text-align: center;
     margin-bottom: 1em;
-
-    // TODO: test with and without this later :)  --- it makes a big difference, trust me
     letter-spacing: -0.1rem;
     text-shadow: 3px 3px 4px rgba(0, 0, 0, 0.5);
   }
