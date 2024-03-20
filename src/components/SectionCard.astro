@@ -1,3 +1,115 @@
-<div>
-  <slot />
+---
+interface Props {
+  title: string
+  columns?: number
+}
+
+const { title, columns = 1 } = Astro.props
+const titleHash = btoa(title)
+---
+
+<div class={`section-card section-${titleHash}`}>
+  <div class="titlebar">
+    <div class="semaphore">
+      <div class="red"></div>
+      <div class="yellow"></div>
+      <div class="green"></div>
+    </div>
+    <div class="title">
+      <span>{title}</span>
+    </div>
+  </div>
+  <div class="slots">
+    <div class="left-slot">
+      <slot name="left" />
+    </div>
+    {
+      columns === 2 ? (
+        <div class="right-slot">
+          <slot name="right" />
+        </div>
+      ) : null
+    }
+  </div>
 </div>
+
+<style lang="scss">
+  :root {
+    --card-bg: #333;
+    --card-border: #222;
+    --card-radius: 7px;
+    --button-size: 0.8rem;
+  }
+
+  div.section-card {
+    max-width: 60%;
+    border: 1px solid var(--card-border);
+    border-radius: var(--card-radius);
+    background-color: var(--card-bg);
+    margin: 10px auto;
+    box-shadow: 3px 3px 5px rgba(47, 47, 47, 0.5);
+
+    div.titlebar {
+      display: flex;
+      justify-content: flex-start;
+      align-content: center;
+      align-items: center;
+      margin-bottom: 10px;
+      padding: 0.5rem;
+      border-bottom: 1px solid #222;
+
+      .title {
+        width: calc(60% - 10px);
+        position: absolute;
+        text-align: center;
+        color: #999;
+      }
+
+      .semaphore {
+        display: flex;
+        padding-left: 5px;
+        div {
+          margin-right: 5px;
+        }
+        .red {
+          width: var(--button-size);
+          height: var(--button-size);
+          background-color: #ff5f56;
+          border-radius: 50%;
+        }
+        .yellow {
+          width: var(--button-size);
+          height: var(--button-size);
+          background-color: #ffbd2e;
+          border-radius: 50%;
+        }
+        .green {
+          width: var(--button-size);
+          height: var(--button-size);
+          background-color: #27c93f;
+          border-radius: 50%;
+        }
+      }
+    }
+
+    .slots {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: 1fr;
+      grid-column-gap: 0px;
+      grid-row-gap: 0px;
+      align-items: stretch;
+      justify-items: stretch;
+      padding: 1rem;
+
+      .left-slot {
+        padding-left: 20px;
+      }
+
+      .right-slot {
+        border-left: 1px solid #666;
+        padding-left: 40px;
+      }
+    }
+  }
+</style>
