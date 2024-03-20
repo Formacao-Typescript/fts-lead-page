@@ -4,7 +4,7 @@ import Countdown from '../components/SmallCountdown.astro'
 import FTSLogo from '../components/FTSLogo.astro'
 import Form from '../components/Form.astro'
 import FancyBackground from '../components/FancyBackground.astro'
-import Info from '../components/Info.astro'
+import SectionCard from '../components/SectionCard.astro'
 ---
 
 <Layout title="Evento - Formação TS">
@@ -27,14 +27,27 @@ import Info from '../components/Info.astro'
         <section id="form-section">
           <Form />
         </section>
+        <hr class="divider" />
+        <section id="about-section">
+          <SectionCard title="sobre-o-evento.md" columns={2}>
+            <div slot="left">teste</div>
+            <div slot="right">teste 2</div>
+          </SectionCard>
+        </section>
       </FancyBackground>
     </section>
   </main>
 </Layout>
 
 <style lang="scss">
-  main {
-    // background: var(--background-gradient);
+  #about-section {
+    margin-top: 50px;
+  }
+  .divider {
+    margin: 0 auto;
+    border: 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    width: 70%;
   }
 
   .content {
@@ -55,6 +68,7 @@ import Info from '../components/Info.astro'
 
   #form-section {
     display: flex;
+    margin-bottom: 20px;
 
     img {
       width: 50%;
