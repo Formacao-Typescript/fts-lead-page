@@ -3,9 +3,6 @@
     <div class="img"><div class="img-overlay"></div></div>
     <div class="img"><div class="img-overlay"></div></div>
     <span class="overlay"></span>
-    <!-- <img src="/assets/placeholder-bg-left-xl.png">
-    <img src="/assets/placeholder-bg-right-xl.png"> -->
-
   </div>
   <div class="content-wrapper">
     <slot />
@@ -13,17 +10,15 @@
 </div>
 
 <style lang="scss">
-
   .background {
-    --bg-color-1: 4, 169, 204; // #04a9cc 
+    --bg-color-1: 4, 169, 204; // #04a9cc
     --bg-color-2: 1, 100, 253; // #0164fd
 
     background: var(--bg-dark-purple);
     position: relative;
-    overflow: hidden;
     z-index: 0;
 
-    @media(max-width: 768px) {
+    @media (max-width: 768px) {
       overflow: auto;
     }
 
@@ -48,7 +43,7 @@
           height: 100%;
         }
 
-        @media(max-width: 768px) {
+        @media (max-width: 768px) {
           height: calc(100svh);
         }
       }
@@ -56,8 +51,7 @@
         width: 60%;
         z-index: 2;
         background-image: linear-gradient(to bottom, rgba(var(--bg-color-1), 0.1), rgba(var(--bg-color-2), 0.3)),
-    url('/assets/placeholder-bg-left-xl.png');
-    // background-image: url('/assets/placeholder-bg-left-xl.png');
+          url('/assets/placeholder-bg-left-xl.png');
 
         .img-overlay {
           background: linear-gradient(to right, transparent 80%, black);
@@ -67,10 +61,10 @@
         width: 40%;
         z-index: 1;
         background-image: linear-gradient(to bottom, rgba(var(--bg-color-1), 0.2), rgba(var(--bg-color-2), 0.3)),
-    url('/assets/placeholder-bg-right-xl.png');
-    .img-overlay {
-      background: linear-gradient(to left, transparent, black);
-    }
+          url('/assets/placeholder-bg-right-xl.png');
+        .img-overlay {
+          background: linear-gradient(to left, transparent, black);
+        }
       }
 
       .overlay {
@@ -82,7 +76,6 @@
         background: linear-gradient(to bottom, transparent, black);
         z-index: 4;
       }
-
     }
   }
 </style>
