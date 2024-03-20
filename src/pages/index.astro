@@ -27,7 +27,7 @@ import SectionCard from '../components/SectionCard.astro'
         <section id="form-section">
           <Form />
         </section>
-        <hr class="divider" />
+        <hr class="divider faded" />
         <section id="about-section">
           <SectionCard title="sobre-o-evento.md" columns={2}>
             <div slot="left">teste</div>
@@ -47,6 +47,10 @@ import SectionCard from '../components/SectionCard.astro'
     margin: 0 auto;
     border: 0;
     border-top: 1px solid rgba(255, 255, 255, 0.2);
+    flex: none;
+    height: 1px;
+    opacity: 0.3;
+    z-index: 1;
     width: 70%;
   }
 
