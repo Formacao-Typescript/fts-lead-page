@@ -63,7 +63,7 @@ import Footer from '../components/Footer.astro'
                 internacionais.
               </p>
 
-              <p>
+              <!-- <p>
                 Lucas foi a primeira pessoa do Brasil (e o primeiro brasileiro no mundo) a ser premiado com o título de
                 TypeScript Champion pela Deno Foundation. Um prêmio somente concedido a quem desafia os limites do
                 conhecimento com TypeScript!
@@ -79,31 +79,31 @@ import Footer from '../components/Footer.astro'
                 Microsoft MVP e Google Developer Experts. Além de ter sido reconhecido pela comunidade DevOps como
                 Docker Captain, atualmente um dos 2 únicos brasileiros a receber tal honraria, e o único a ter todos
                 esses títulos ao mesmo tempo.
-              </p>
+              </p> -->
+            </div>
+            <div slot="bottom">
+              <div class="author-section-info">
+                <span class="author-section-info-item"
+                  ><strong class="gradient-text">+400</strong> Publicações técnicas</span
+                >
+                <span class="author-section-info-divider"></span>
+                <span class="author-section-info-item"
+                  ><strong class="gradient-text">+10</strong> Anos atuando no mercado</span
+                >
+                <span class="author-section-info-divider"></span>
+                <span class="author-section-info-item"
+                  ><strong class="gradient-text">+1 Mi</strong> de pessoas impactadas</span
+                >
+              </div>
             </div>
           </SectionCard>
-          <div slot="bottom" class="details">
-            <div class="author-section-info">
-              <span class="author-section-info-item"
-                ><strong class="gradient-text">+400</strong> Publicações técnicas</span
-              >
-              <span class="author-section-info-divider"></span>
-              <span class="author-section-info-item"
-                ><strong class="gradient-text">+10</strong> Anos atuando no mercado</span
-              >
-              <span class="author-section-info-divider"></span>
-              <span class="author-section-info-item"
-                ><strong class="gradient-text">+1 Milhão</strong> de pessoas impactadas</span
-              >
-            </div>
-          </div>
         </section>
+        <section id="endpage-cta-section">
+          <a href="#hero-section">Quero participar!</a>
+        </section>
+  
+        <Footer />
       </FancyBackground>
-      <section id="endpage-cta-section">
-        <a href="#hero-section">Quero participar!</a>
-      </section>
-
-      <Footer />
     </section>
   </main>
 </Layout>
@@ -255,15 +255,6 @@ import Footer from '../components/Footer.astro'
     width: 70%;
   }
 
-  .content {
-    margin: auto;
-    padding: 1rem;
-    width: 800px;
-    max-width: calc(100% - 2rem);
-    color: white;
-    font-size: 20px;
-    line-height: 1.6;
-  }
   .logo {
     text-align: center;
     padding-top: 30px;
