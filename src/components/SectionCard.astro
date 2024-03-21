@@ -2,9 +2,10 @@
 interface Props {
   title: string
   columns?: number
+  bottom?: boolean
 }
 
-const { title, columns = 1 } = Astro.props
+const { title, columns = 1, bottom = false } = Astro.props
 const titleHash = btoa(title)
 ---
 
@@ -19,7 +20,7 @@ const titleHash = btoa(title)
       <span>{title}</span>
     </div>
   </div>
-  <div class="slots">
+  <div class={`slots colums-${columns}`}>
     <div class="left-slot">
       <slot name="left" />
     </div>
@@ -31,6 +32,13 @@ const titleHash = btoa(title)
       ) : null
     }
   </div>
+  {
+    bottom ? (
+      <div class="bottom-slot">
+        <slot name="bottom" />
+      </div>
+    ) : null
+  }
 </div>
 
 <style lang="scss">
@@ -97,7 +105,6 @@ const titleHash = btoa(title)
 
     .slots {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
       grid-template-rows: 1fr;
       grid-column-gap: 0px;
       grid-row-gap: 0px;
@@ -105,6 +112,12 @@ const titleHash = btoa(title)
       justify-items: stretch;
       padding: 1rem;
 
+      &.colums-1 {
+        grid-template-columns: 1fr;
+      }
+      &.colums-2 {
+        grid-template-columns: repeat(2, 1fr);
+      }
       .left-slot {
         padding-left: 20px;
       }
