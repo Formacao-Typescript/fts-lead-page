@@ -34,10 +34,17 @@ import Footer from '../components/Footer.astro'
         <section id="about-section">
           <SectionCard title="sobre-o-evento.md" columns={2}>
             <div slot="left">
-              <h1 class="about-left-call">### Para quem é o evento?</h1>
-              <h2 class="about-left-title"># É para você que:</h2>
+              <h1 class="about-left-call"># Para quem é o evento?</h1>
+              <h2 class="about-left-title">É para você que:</h2>
             </div>
-            <div slot="right">teste 2</div>
+            <div slot="right" class="about-section-topics">
+              <ul>
+                <li>Queer receber mais reconhecimento pelo que você é no seu trabalho</li>
+                <li>Busca melhorar a aforma como você se relaciona com as pessoas</li>
+                <li>Já perdeu oportunidades por não conseguir se comunicar com clareza</li>
+                <li>Procura desenvolver habilidades que vão fazer de 2024 o ano da sua vida</li>
+              </ul>
+            </div>
           </SectionCard>
         </section>
 
@@ -61,6 +68,11 @@ import Footer from '../components/Footer.astro'
 </Layout>
 
 <style lang="scss">
+  .gradient-text {
+    background: var(--trade-essential-gradient);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
   #author-section {
     margin-top: 30px;
   }
@@ -82,9 +94,29 @@ import Footer from '../components/Footer.astro'
       font-weight: 700;
       line-height: 1;
       margin-top: 0.3em;
-      margin-left: 0.8em;
       font-size: 2em;
       color: #ddd;
+    }
+
+    .about-section-topics {
+      ul {
+        list-style: none;
+        padding: 0;
+
+        li {
+          margin: 24px 0;
+          font-size: 0.9rem;
+          color: rgba(255, 255, 255, 0.9);
+          &::before {
+            content: '☆'; //★
+            margin-left: -20px;
+            margin-right: 10px;
+            background: var(--trade-essential-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+          }
+        }
+      }
     }
   }
   .divider {
