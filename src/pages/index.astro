@@ -6,7 +6,6 @@ import Form from '../components/Form.astro'
 import FancyBackground from '../components/FancyBackground.astro'
 import SectionCard from '../components/SectionCard.astro'
 import Footer from '../components/Footer.astro'
-
 ---
 
 <Layout title="Evento - Formação TS">
@@ -39,10 +38,10 @@ import Footer from '../components/Footer.astro'
             </div>
             <div slot="right" class="about-section-topics">
               <ul>
-                <li>Queer receber mais reconhecimento pelo que você é no seu trabalho</li>
-                <li>Busca melhorar a aforma como você se relaciona com as pessoas</li>
-                <li>Já perdeu oportunidades por não conseguir se comunicar com clareza</li>
-                <li>Procura desenvolver habilidades que vão fazer de 2024 o ano da sua vida</li>
+                <li>Quer aprender TypeScript de verdade</li>
+                <li>Busca melhorar as suas habilidades e se atualizar no mercado</li>
+                <li>Já perdeu oportunidades por não ter os conhecimentos necessários</li>
+                <li>Procura dar o próximo passo na sua carreira</li>
               </ul>
             </div>
           </SectionCard>
@@ -52,31 +51,59 @@ import Footer from '../components/Footer.astro'
 
         <section id="author-section">
           <SectionCard title="sobre-lucas.md" columns={2} bottom>
-            <div slot="left">
+            <div slot="left" class="avatar">
               <img src="/assets/avatar.png" alt="Lucas Santos" />
             </div>
             <div slot="right">
               <h1 class="editor-title"># Seu professor</h1>
               <h2 class="editor-subtitle">Lucas Santos</h2>
-              <p>Lorem ipsum, Google Developer Expert, Docker Captain, Microsoft Most Valueble Professional, soon to be Github Star</p>
-            </div>
-            <div slot="bottom">
-              <div class="author-section-info">
-                <span class="author-section-info-item"><strong class="gradient-text">+520</strong> Apresentações nos últimos 5 anos</span>
-                <span class="author-section-info-divider" />
-                <span class="author-section-info-item"><strong class="gradient-text">+10</strong> Anos atuando no mercado corporativo</span>
-                <span class="author-section-info-divider" />
-                <span class="author-section-info-item"><strong class="gradient-text">+121k</strong> Seguidores acompanhando</span>
-              </div>
+              <p>
+                Lucas Santos é um educador e palestrante profissional, com mais de uma década atuando no mercado de
+                desenvolvimento. Já ministrou mais de 150 palestras sobre tecnologia em diversos eventos nacionais e
+                internacionais.
+              </p>
+
+              <p>
+                Lucas foi a primeira pessoa do Brasil (e o primeiro brasileiro no mundo) a ser premiado com o título de
+                TypeScript Champion pela Deno Foundation. Um prêmio somente concedido a quem desafia os limites do
+                conhecimento com TypeScript!
+              </p>
+
+              <p>
+                Com mais de 400 publicações técnicas sobre desenvolvimento de software para seu blog e outros sites
+                desde 2015. Seus conteúdos já ensinaram e inspiraram mais de 1 milhão de pessoas ao redor do mundo.
+              </p>
+
+              <p>
+                Premiado como especialista em JavaScript, Node.js e TypeScript pela Microsoft e Google com os prêmios
+                Microsoft MVP e Google Developer Experts. Além de ter sido reconhecido pela comunidade DevOps como
+                Docker Captain, atualmente um dos 2 únicos brasileiros a receber tal honraria, e o único a ter todos
+                esses títulos ao mesmo tempo.
+              </p>
             </div>
           </SectionCard>
+          <div slot="bottom" class="details">
+            <div class="author-section-info">
+              <span class="author-section-info-item"
+                ><strong class="gradient-text">+400</strong> Publicações técnicas</span
+              >
+              <span class="author-section-info-divider"></span>
+              <span class="author-section-info-item"
+                ><strong class="gradient-text">+10</strong> Anos atuando no mercado</span
+              >
+              <span class="author-section-info-divider"></span>
+              <span class="author-section-info-item"
+                ><strong class="gradient-text">+1 Milhão</strong> de pessoas impactadas</span
+              >
+            </div>
+          </div>
         </section>
-        <section id="endpage-cta-section">
-          <a href="#hero-section">Quero participar!</a>
-        </section>
-
-        <Footer />
       </FancyBackground>
+      <section id="endpage-cta-section">
+        <a href="#hero-section">Quero participar!</a>
+      </section>
+
+      <Footer />
     </section>
   </main>
 </Layout>
@@ -87,16 +114,21 @@ import Footer from '../components/Footer.astro'
     background-clip: text;
     -webkit-text-fill-color: transparent;
   }
-  
+
+  div.details {
+    margin: 0 auto;
+    width: 60%;
+  }
+
   h1.editor-title {
-      font-weight: 700;
-      line-height: 1;
-      margin-bottom: 0;
-      font-size: 1.3em;
-      background: var(--trade-essential-gradient);
-      background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
+    font-weight: 700;
+    line-height: 1;
+    margin-bottom: 0;
+    font-size: 1.3em;
+    background: var(--trade-essential-gradient);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
 
   h2.editor-subtitle {
     font-weight: 700;
@@ -141,7 +173,7 @@ import Footer from '../components/Footer.astro'
       width: 100%;
       border-radius: 12px;
     }
-    
+
     .author-section-info {
       display: flex;
       justify-content: space-between;
