@@ -1,13 +1,13 @@
 ---
 interface Props {
+  id: string
   scale: '2x' | '4x'
 }
 
-const { scale } = Astro.props
+const { id = 'fts-logo', scale } = Astro.props
 ---
 
-<div class="logo" data-scale={scale}>
-  <!-- TODO: can use this as astro prop if needed -->
+<div id={id} class="logo" data-scale={scale}>
   <div class="logo-background">
     <div class="logo-content">
       <span class="logo-content-slashes">//</span>

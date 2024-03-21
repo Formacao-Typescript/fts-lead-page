@@ -14,7 +14,7 @@ import Footer from '../components/Footer.astro'
       <FancyBackground>
         <div class="content">
           <div class="logo">
-            <FTSLogo scale="4x" />
+            <FTSLogo scale="4x" id="fts-logo" />
           </div>
           <h1 class="copy font-subtitle-alt">Seja mestre na tecnologia mais importante do momento!</h1>
           <h2 class="sub-copy">
@@ -308,3 +308,16 @@ import Footer from '../components/Footer.astro'
     }
   }
 </style>
+
+<script>
+  function resizeLogo() {
+    const screenWidth = window.innerWidth;
+    const element = document.getElementById('fts-logo');
+
+    if(screenWidth < 562) {
+      element.dataset.scale = '2x';
+    } 
+  }
+  window.addEventListener('load', resizeLogo);
+  window.addEventListener('resize', resizeLogo);
+  </script>
