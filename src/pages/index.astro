@@ -34,8 +34,8 @@ import Footer from '../components/Footer.astro'
         <section id="about-section">
           <SectionCard title="sobre-o-evento.md" columns={2}>
             <div slot="left">
-              <h1 class="about-left-call"># Para quem é o evento?</h1>
-              <h2 class="about-left-title">É para você que:</h2>
+              <h1 class="editor-title"># Para quem é o evento?</h1>
+              <h2 class="editor-subtitle">É para você que:</h2>
             </div>
             <div slot="right" class="about-section-topics">
               <ul>
@@ -51,13 +51,23 @@ import Footer from '../components/Footer.astro'
         <hr class="divider faded" />
 
         <section id="author-section">
-          <SectionCard title="sobre-lucas.md" columns={2}>
+          <SectionCard title="sobre-lucas.md" columns={2} bottom>
             <div slot="left">
-              <h1 class="about-left">Sobre mim</h1>
-              <p>Lorem ipsum</p>
+              <img src="/assets/avatar.png" alt="Lucas Santos" />
             </div>
             <div slot="right">
-              <img src="/assets/avatar.png" alt="Lucas Santos" />
+              <h1 class="editor-title"># Seu professor</h1>
+              <h2 class="editor-subtitle">Lucas Santos</h2>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus eligendi eveniet nihil reiciendis delectus perspiciatis quis fuga explicabo? Esse eveniet possimus corrupti. Est cumque ratione tempore quo itaque? In, dolor?</p>
+            </div>
+            <div slot="bottom">
+              <div class="author-section-info">
+                <span class="author-section-info-item"><strong class="gradient-text">+520</strong> Apresentações nos últimos 5 anos</span>
+                <span class="author-section-info-divider" />
+                <span class="author-section-info-item"><strong class="gradient-text">+10</strong> Anos atuando no mercado corporativo</span>
+                <span class="author-section-info-divider" />
+                <span class="author-section-info-item"><strong class="gradient-text">+121k</strong> Seguidores acompanhando</span>
+              </div>
             </div>
           </SectionCard>
         </section>
@@ -73,14 +83,8 @@ import Footer from '../components/Footer.astro'
     background-clip: text;
     -webkit-text-fill-color: transparent;
   }
-  #author-section {
-    margin-top: 30px;
-  }
-  #about-section {
-    margin-top: 50px;
-    margin-bottom: 20px;
-
-    h1.about-left-call {
+  
+  h1.editor-title {
       font-weight: 700;
       line-height: 1;
       margin-bottom: 0;
@@ -90,13 +94,16 @@ import Footer from '../components/Footer.astro'
       -webkit-text-fill-color: transparent;
     }
 
-    h2.about-left-title {
-      font-weight: 700;
-      line-height: 1;
-      margin-top: 0.3em;
-      font-size: 2em;
-      color: #ddd;
-    }
+  h2.editor-subtitle {
+    font-weight: 700;
+    line-height: 1;
+    margin-top: 0.3em;
+    font-size: 2em;
+    color: #ddd;
+  }
+  #about-section {
+    margin-top: 50px;
+    margin-bottom: 20px;
 
     .about-section-topics {
       ul {
@@ -116,6 +123,35 @@ import Footer from '../components/Footer.astro'
             -webkit-text-fill-color: transparent;
           }
         }
+      }
+    }
+  }
+
+  #author-section {
+    margin-top: 30px;
+    img {
+      width: 100%;
+      border-radius: 12px;
+    }
+    
+    .author-section-info {
+      display: flex;
+      justify-content: space-between;
+      padding: 0 1rem;
+      &-item {
+        font-size: 1.2rem;
+        strong {
+          display: block;
+          font-size: 3rem;
+          margin-bottom: 4px;
+        }
+      }
+
+      &-divider {
+        width: 2px;
+        height: 100px;
+        background: linear-gradient(to bottom, transparent, gray, transparent);
+        margin: 20px 20px;
       }
     }
   }
