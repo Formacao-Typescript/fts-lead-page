@@ -127,6 +127,10 @@ import Footer from '../components/Footer.astro'
             -webkit-text-fill-color: transparent;
           }
         }
+
+        @media(max-width: 562px) {
+          padding-left: 20px;
+        }
       }
     }
   }
@@ -156,6 +160,33 @@ import Footer from '../components/Footer.astro'
         height: 100px;
         background: linear-gradient(to bottom, transparent, gray, transparent);
         margin: 20px 20px;
+      }
+
+      @media(max-width: 768px) {
+        &-item {
+          font-size: 1rem;
+          strong {
+            font-size: 2rem;
+          }
+        }
+        &-divider {
+          height: 80px;
+          margin: 10px 20px;
+        } 
+      }
+
+      @media(max-width: 562px) {
+        flex-direction: column;
+        &-item {
+          margin-bottom: 24px;
+          strong {
+            display: inline;
+            margin-right: 9px;
+          }
+        }
+        &-divider {
+          display: none;
+        } 
       }
     }
   }

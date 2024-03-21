@@ -62,6 +62,7 @@ const titleHash = btoa(title)
     @media (max-width: 1024px) {
       max-width: 80%;
     }
+
     div.titlebar {
       display: flex;
       justify-content: flex-start;
@@ -125,8 +126,26 @@ const titleHash = btoa(title)
       }
       
       .right-slot {
-        border-left: 1px solid #666;
+        // border-left: 1px solid #666;
         padding-left: 40px;
+      }
+
+      @media(max-width: 562px) {
+        &.colums-1 {
+          grid-template-columns: 1fr;
+          grid-template-rows: auto;
+        }
+        &.colums-2 {
+          grid-template-columns: 1fr;
+          grid-template-rows: auto;
+        }
+        .left-slot {
+          padding: 0 20px;
+        }
+        .right-slot {
+          border-left: none;
+          padding: 0 20px;
+        }
       }
     }
   }
