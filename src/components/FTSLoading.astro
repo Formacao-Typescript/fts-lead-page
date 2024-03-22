@@ -18,81 +18,67 @@ interface Props {}
 <script async>
   function animationStart() {
     console.log('animationStart')
-    const loading = document.querySelector('.fts-loading');
     const ftsChangingBackground = document.querySelector('.fts-loading-changing-background');
-    const initialBorderRadius = '60% 50% 70% 60%';
-    ftsChangingBackground.style.borderRadius = initialBorderRadius;
     window.anime({
       targets: ftsChangingBackground,
-      borderRadius: [initialBorderRadius, '20% 80% 30% 90%', '60% 90% 80% 80%', initialBorderRadius],
-      rotate: '360deg',
-      // duration: 2000,
-      duration: 2000,
+      width: 0,
+      height: 0,
+      duration: 300,
       easing: 'linear',
-      loop: 2,
+    });
+    window.anime({
+      targets: '#fts-loading .logo-background',
+      padding: ['0px','4px', '2px'],
+      duration: 300,
+      delay: 300,
+      easing: 'linear',
       complete: () => {
         window.anime({
-          targets: ftsChangingBackground,
-          width: 0,
-          height: 0,
+          targets: '#fts-loading .logo',
+          fontSize: ['4rem', '2rem'],
           duration: 300,
           easing: 'linear',
-        });
-        window.anime({
-          targets: '#fts-loading .logo-background',
-          padding: ['0px','4px', '2px'],
-          duration: 300,
-          delay: 300,
-          easing: 'linear',
-          complete: () => {
+          complete: () => { 
+            document.querySelector('#fts-loading .logo-content-slashes').style.display = 'inline';
             window.anime({
-              targets: '#fts-loading .logo',
-              fontSize: ['4rem', '2rem'],
+              targets: '#fts-loading .logo-content-slashes',
+              width: 'auto',
+              opacity: [0, 1],
+              // easing: 'easeOutExpo',
               duration: 300,
-              easing: 'linear',
-              complete: () => { 
-                document.querySelector('#fts-loading .logo-content-slashes').style.display = 'inline';
+              delay: 100,
+              complete: () => {
+                document.querySelector('#fts-loading .logo-content-text').style.display = 'inline';
                 window.anime({
-                  targets: '#fts-loading .logo-content-slashes',
+                  targets: '#fts-loading .logo-content-text',
                   width: 'auto',
                   opacity: [0, 1],
                   // easing: 'easeOutExpo',
                   duration: 300,
                   delay: 100,
                   complete: () => {
-                    document.querySelector('#fts-loading .logo-content-text').style.display = 'inline';
                     window.anime({
-                      targets: '#fts-loading .logo-content-text',
-                      width: 'auto',
-                      opacity: [0, 1],
-                      // easing: 'easeOutExpo',
-                      duration: 300,
-                      delay: 100,
+                      targets: ftsChangingBackground,
+                      width: '200vw',
+                      height: '200vh',
+                      duration: 800,
+                      easing: 'linear',
+                      fill: 'forwards',
                       complete: () => {
+                        ftsChangingBackground.style.width = '200vw';
+                        ftsChangingBackground.style.height = '200vh';
+                        document.querySelector('#fts-loading').style.background = 'transparent';
                         window.anime({
-                          targets: ftsChangingBackground,
-                          width: '200vw',
-                          height: '200vh',
-                          duration: 800,
+                          targets: '#fts-loading',
+                          opacity: [1, 0],
                           easing: 'linear',
-                          fill: 'forwards',
+                          duration: 400,
                           complete: () => {
-                            ftsChangingBackground.style.width = '200vw';
-                            ftsChangingBackground.style.height = '200vh';
-                            document.querySelector('#fts-loading').style.background = 'transparent';
-                            window.anime({
-                              targets: '#fts-loading',
-                              opacity: [1, 0],
-                              easing: 'linear',
-                              duration: 400,
-                              complete: () => {
-                                document.querySelector('#fts-loading').style.display = 'none';
-                              }
-                            });
+                            document.querySelector('#fts-loading').style.display = 'none';
                           }
-                        })
+                        });
                       }
-                    });
+                    })
                   }
                 });
               }
@@ -101,10 +87,14 @@ interface Props {}
         });
       }
     });
+    
   }
   
   window.addEventListener('load', () => {
-    animationStart();
+    setTimeout(() => {
+      animationStart();
+    }, 1000);
+    // animationStart();
   });
 </script>
 <style lang="scss">
@@ -121,6 +111,20 @@ interface Props {}
     --logo-size: 4;
   }
   
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    25% {
+      border-radius: 20% 80% 30% 90%;
+    }
+    50% {
+      border-radius: 60% 90% 80% 80%;
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
   .fts-loading {
     position: fixed;
     display: flex;
@@ -139,6 +143,7 @@ interface Props {}
       height: 140px;
       z-index: var(--z-index-1);
       border-radius: 60% 50% 70% 60%;
+      animation: spin 2s linear infinite;
     }
   }
   
