@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro'
 import Countdown from '../components/SmallCountdown.astro'
 import FTSLogo from '../components/FTSLogo.astro'
+import FTSLoading from '../components/FTSLoading.astro'
 import Form from '../components/Form.astro'
 import FancyBackground from '../components/FancyBackground.astro'
 import SectionCard from '../components/SectionCard.astro'
@@ -10,6 +11,7 @@ import Footer from '../components/Footer.astro'
 
 <Layout title="Evento - Formação TS">
   <main>
+    <FTSLoading />
     <section id="hero-section">
       <FancyBackground>
         <div class="content">
@@ -328,4 +330,6 @@ import Footer from '../components/Footer.astro'
   }
   window.addEventListener('load', resizeLogo);
   window.addEventListener('resize', resizeLogo);
+
+
   </script>

@@ -1,0 +1,197 @@
+---
+interface Props {}
+
+---
+<div id="fts-loading" class="fts-loading">
+  <div class="fts-loading-changing-background"></div>
+  <div class="logo">
+    <div class="logo-background">
+      <div class="logo-content">
+        <span class="logo-content-slashes">//</span>
+        <span class="logo-content-text">formação</span>
+        <span class="logo-content-ts">TS</span>
+      </div>
+    </div>
+    <!-- <button type="button" onclick="animationStart()">Start</button> -->
+  </div>
+</div>
+<script async>
+  function animationStart() {
+    console.log('animationStart')
+    const loading = document.querySelector('.fts-loading');
+    const ftsChangingBackground = document.querySelector('.fts-loading-changing-background');
+    const initialBorderRadius = '60% 50% 70% 60%';
+    ftsChangingBackground.style.borderRadius = initialBorderRadius;
+    window.anime({
+      targets: ftsChangingBackground,
+      borderRadius: [initialBorderRadius, '20% 80% 30% 90%', '60% 90% 80% 80%', initialBorderRadius],
+      rotate: '360deg',
+      // duration: 2000,
+      duration: 2000,
+      easing: 'linear',
+      loop: 2,
+      complete: () => {
+        window.anime({
+          targets: ftsChangingBackground,
+          width: 0,
+          height: 0,
+          duration: 300,
+          easing: 'linear',
+        });
+        window.anime({
+          targets: '#fts-loading .logo-background',
+          padding: ['0px','4px', '2px'],
+          duration: 300,
+          delay: 300,
+          easing: 'linear',
+          complete: () => {
+            window.anime({
+              targets: '#fts-loading .logo',
+              fontSize: ['4rem', '2rem'],
+              duration: 300,
+              easing: 'linear',
+              complete: () => { 
+                document.querySelector('#fts-loading .logo-content-slashes').style.display = 'inline';
+                window.anime({
+                  targets: '#fts-loading .logo-content-slashes',
+                  width: 'auto',
+                  opacity: [0, 1],
+                  // easing: 'easeOutExpo',
+                  duration: 300,
+                  delay: 100,
+                  complete: () => {
+                    document.querySelector('#fts-loading .logo-content-text').style.display = 'inline';
+                    window.anime({
+                      targets: '#fts-loading .logo-content-text',
+                      width: 'auto',
+                      opacity: [0, 1],
+                      // easing: 'easeOutExpo',
+                      duration: 300,
+                      delay: 100,
+                      complete: () => {
+                        window.anime({
+                          targets: ftsChangingBackground,
+                          width: '200vw',
+                          height: '200vh',
+                          duration: 800,
+                          easing: 'linear',
+                          fill: 'forwards',
+                          complete: () => {
+                            ftsChangingBackground.style.width = '200vw';
+                            ftsChangingBackground.style.height = '200vh';
+                            document.querySelector('#fts-loading').style.background = 'transparent';
+                            window.anime({
+                              targets: '#fts-loading',
+                              opacity: [1, 0],
+                              easing: 'linear',
+                              duration: 400,
+                              complete: () => {
+                                document.querySelector('#fts-loading').style.display = 'none';
+                              }
+                            });
+                          }
+                        })
+                      }
+                    });
+                  }
+                });
+              }
+            });
+          }
+        });
+      }
+    });
+  }
+  
+  window.addEventListener('load', () => {
+    animationStart();
+  });
+</script>
+<style lang="scss">
+  :root {
+    --logo-background: #0b0b20;
+    --background-gradient: linear-gradient(to bottom, #04a9cc, #0164fd);
+    --slash-gradient: linear-gradient(to top, #00aac9, #008ce7);
+    --ts-gradient: linear-gradient(to bottom, #00aac9 30%, #006bfd);
+    
+    --z-index-0: 20;
+    --z-index-1: 21;
+    --z-index-2: 22;
+    
+    --logo-size: 4;
+  }
+  
+  .fts-loading {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100svh;
+    background: #0b0b20;
+    z-index: var(--z-index-0);
+    
+    &-changing-background {
+      padding: 20px;
+      background: var(--background-gradient);
+      position: fixed;
+      width: 140px;
+      height: 140px;
+      z-index: var(--z-index-1);
+      border-radius: 60% 50% 70% 60%;
+    }
+  }
+  
+  .logo {
+    position: fixed;
+    display: inline-block;
+    font-size: calc(var(--logo-size) * 1rem); // 4rem;
+    z-index: var(--z-index-2);
+    
+    &-background {
+      background: var(--background-gradient);
+      border-radius: 0.375em;
+      padding: calc(var(--logo-size) * 1px); // 4px;
+      padding: 0;
+    }
+    
+    &-content {
+      border-radius: 0.375em;
+      background: var(--logo-background);
+      color: white;
+      font-family: 'Red Hat Display', sans-serif;
+      box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+      padding: 0 24px;
+      
+      &-slashes {
+        background: var(--slash-gradient);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-weight: bold;
+        overflow: show;
+        padding-left: 6px;
+        letter-spacing: 0.1rem;
+        display: none;
+        opacity: 0;
+        width: 0;
+      }
+      
+      &-text {
+        text-transform: lowercase;
+        font-weight: bold;
+        letter-spacing: 0.3rem;
+        opacity: 0;
+        display: none;
+        width: 0;
+      }
+      
+      &-ts {
+        text-transform: uppercase;
+        background: var(--ts-gradient);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-weight: 900;
+      }
+    }
+  }
+</style>
