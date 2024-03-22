@@ -19,6 +19,12 @@ interface Props {}
   function animationStart() {
     console.log('animationStart')
     const ftsChangingBackground = document.querySelector('.fts-loading-changing-background');
+    /* 
+    FIXME: just figured I could have organized all the different-object animations in a single 
+    cohesive animation using anime.timeline(...).add(...) 🤦🏻‍♂️. 
+    this can definitely be improved in a near future :)
+    leaving a good ref here: https://animejs.com/documentation/#colors
+    */
     window.anime({
       targets: ftsChangingBackground,
       width: 0,
