@@ -32,7 +32,7 @@ import Carousel from '../components/Carousel.astro'
           <Form />
         </section>
         <hr class="divider faded" />
-
+        
         <section id="about-section">
           <SectionCard title="sobre-o-evento.md" columns={2}>
             <div slot="left">
@@ -49,9 +49,9 @@ import Carousel from '../components/Carousel.astro'
             </div>
           </SectionCard>
         </section>
-
+        
         <hr class="divider faded" />
-
+        
         <section id="author-section">
           <SectionCard title="sobre-lucas.md" columns={2} bottom>
             <div slot="left" class="avatar">
@@ -65,37 +65,37 @@ import Carousel from '../components/Carousel.astro'
                 desenvolvimento. Já ministrou mais de 150 palestras sobre tecnologia em diversos eventos nacionais e
                 internacionais.
               </p>
-
+              
               <!-- <p>
-                Lucas foi a primeira pessoa do Brasil (e o primeiro brasileiro no mundo) a ser premiado com o título de
-                TypeScript Champion pela Deno Foundation. Um prêmio somente concedido a quem desafia os limites do
-                conhecimento com TypeScript!
+              Lucas foi a primeira pessoa do Brasil (e o primeiro brasileiro no mundo) a ser premiado com o título de
+              TypeScript Champion pela Deno Foundation. Um prêmio somente concedido a quem desafia os limites do
+              conhecimento com TypeScript!
               </p>
-
+              
               <p>
-                Com mais de 400 publicações técnicas sobre desenvolvimento de software para seu blog e outros sites
-                desde 2015. Seus conteúdos já ensinaram e inspiraram mais de 1 milhão de pessoas ao redor do mundo.
+              Com mais de 400 publicações técnicas sobre desenvolvimento de software para seu blog e outros sites
+              desde 2015. Seus conteúdos já ensinaram e inspiraram mais de 1 milhão de pessoas ao redor do mundo.
               </p>
-
+              
               <p>
-                Premiado como especialista em JavaScript, Node.js e TypeScript pela Microsoft e Google com os prêmios
-                Microsoft MVP e Google Developer Experts. Além de ter sido reconhecido pela comunidade DevOps como
-                Docker Captain, atualmente um dos 2 únicos brasileiros a receber tal honraria, e o único a ter todos
-                esses títulos ao mesmo tempo.
+              Premiado como especialista em JavaScript, Node.js e TypeScript pela Microsoft e Google com os prêmios
+              Microsoft MVP e Google Developer Experts. Além de ter sido reconhecido pela comunidade DevOps como
+              Docker Captain, atualmente um dos 2 únicos brasileiros a receber tal honraria, e o único a ter todos
+              esses títulos ao mesmo tempo.
               </p> -->
             </div>
             <div slot="bottom">
               <div class="author-section-info">
                 <span class="author-section-info-item"
-                  ><strong class="gradient-text">+400</strong> Publicações técnicas</span
+                ><strong class="gradient-text">+400</strong> Publicações técnicas</span
                 >
                 <span class="author-section-info-divider"></span>
                 <span class="author-section-info-item"
-                  ><strong class="gradient-text">+10</strong> Anos atuando no mercado</span
+                ><strong class="gradient-text">+10</strong> Anos atuando no mercado</span
                 >
                 <span class="author-section-info-divider"></span>
                 <span class="author-section-info-item"
-                  ><strong class="gradient-text">+1 Mi</strong> de pessoas impactadas</span
+                ><strong class="gradient-text">+1 Mi</strong> de pessoas impactadas</span
                 >
               </div>
             </div>
@@ -108,16 +108,53 @@ import Carousel from '../components/Carousel.astro'
               <h2 class="editor-subtitle">Alunos fazendo a diferença</h2>
             </div>
             <div slot="bottom">
-              
-              <Carousel />
+              <Carousel
+                id="testimonials-carousel"
+                items={
+                [
+                { src: "../../public/assets/testimonials/Bruno Noriller.jpeg" },
+                { src: "../../public/assets/testimonials/Gabriel.jpg" },
+                { src: "../../public/assets/testimonials/Gustavo.png" },
+                { src: "../../public/assets/testimonials/Lucas Magno.jpeg" },
+                { src: "../../public/assets/testimonials/Lucas Magno.png" },
+                ]
+              }/>
             </div>
           </SectionCard>
         </section>
-
+        <section id="socialproof-section">
+          <SectionCard title="todas-as-redes.md" columns={1} bottom>
+            <div slot="left">
+              <h1 class="editor-title"># Em todas as redes sociais</h1>
+              <h2 class="editor-subtitle">Feedbacks recompensadores</h2>
+            </div>
+            <div slot="bottom">
+              <Carousel 
+              id="socialproof-carousel"
+              items={
+                [
+                  { src: '../../public/assets/testimonials/socialproof/Bragamat.jpeg' },
+                  { src: '../../public/assets/testimonials/socialproof/Discord - Mark.jpg' },
+                  { src: '../../public/assets/testimonials/socialproof/Discord - z3rocall.jpg' },
+                  { src: '../../public/assets/testimonials/socialproof/IMG_1120.jpg' },
+                  { src: '../../public/assets/testimonials/socialproof/Screenshot 2020-06-12.png' },
+                  { src: '../../public/assets/testimonials/socialproof/Screenshot 2024-01-24 2.jpg' },
+                  { src: '../../public/assets/testimonials/socialproof/Screenshot 2024-01-24.jpg' },
+                  { src: '../../public/assets/testimonials/socialproof/Screenshot 2024-02-24.png' },
+                  { src: '../../public/assets/testimonials/socialproof/Twitter - Bragamat.PNG' },
+                  { src: '../../public/assets/testimonials/socialproof/twitter - Eduardo.PNG' },
+                  { src: '../../public/assets/testimonials/socialproof/Twitter - Igor.PNG' },
+                  { src: '../../public/assets/testimonials/socialproof/Twitter - Jess.PNG' },
+                ]
+              }/>
+            </div>
+          </SectionCard>
+        </section>
+        
         <section id="endpage-cta-section">
           <a href="#hero-section">Quero participar!</a>
         </section>
-  
+        
         <Footer />
       </FancyBackground>
     </section>
@@ -130,12 +167,12 @@ import Carousel from '../components/Carousel.astro'
     background-clip: text;
     -webkit-text-fill-color: transparent;
   }
-
+  
   div.details {
     margin: 0 auto;
     width: 60%;
   }
-
+  
   h1.editor-title {
     font-weight: 700;
     line-height: 1;
@@ -145,7 +182,7 @@ import Carousel from '../components/Carousel.astro'
     background-clip: text;
     -webkit-text-fill-color: transparent;
   }
-
+  
   h2.editor-subtitle {
     font-weight: 700;
     line-height: 1;
@@ -156,12 +193,12 @@ import Carousel from '../components/Carousel.astro'
   #about-section {
     margin-top: 50px;
     margin-bottom: 20px;
-
+    
     .about-section-topics {
       ul {
         list-style: none;
         padding: 0;
-
+        
         li {
           margin: 24px 0;
           font-size: 0.9rem;
@@ -175,21 +212,21 @@ import Carousel from '../components/Carousel.astro'
             -webkit-text-fill-color: transparent;
           }
         }
-
+        
         @media(max-width: 562px) {
           padding-left: 20px;
         }
       }
     }
   }
-
+  
   #author-section {
     margin-top: 30px;
     img {
       width: 100%;
       border-radius: 12px;
     }
-
+    
     .author-section-info {
       display: flex;
       justify-content: space-between;
@@ -202,14 +239,14 @@ import Carousel from '../components/Carousel.astro'
           margin-bottom: 4px;
         }
       }
-
+      
       &-divider {
         width: 2px;
         height: 100px;
         background: linear-gradient(to bottom, transparent, gray, transparent);
         margin: 10px 20px;
       }
-
+      
       @media(max-width: 768px) {
         &-item {
           font-size: 1rem;
@@ -222,7 +259,7 @@ import Carousel from '../components/Carousel.astro'
           margin: 10px 20px;
         } 
       }
-
+      
       @media(max-width: 562px) {
         flex-direction: column;
         &-item {
@@ -238,7 +275,7 @@ import Carousel from '../components/Carousel.astro'
       }
     }
   }
-
+  
   #endpage-cta-section {
     text-align: center;
     margin: 50px;
@@ -252,14 +289,14 @@ import Carousel from '../components/Carousel.astro'
       border-radius: 12px;
       text-decoration: none;
       transition: all 0.2s ease-in-out;
-
+      
       &:hover {
         background: var(--trade-intermediate-gradient);
         box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
         transform: scale(1.05);
         border-style: outset;
       }
-
+      
       @media(max-width: 562px) {
         font-size: 1.2rem;
       }
@@ -275,17 +312,17 @@ import Carousel from '../components/Carousel.astro'
     z-index: 1;
     width: 70%;
   }
-
+  
   .logo {
     text-align: center;
     padding-top: 30px;
     margin-bottom: 30px;
   }
-
+  
   #form-section {
     display: flex;
     margin-bottom: 20px;
-
+    
     img {
       width: 50%;
       object-fit: cover;
@@ -296,7 +333,7 @@ import Carousel from '../components/Carousel.astro'
       margin: 0;
     }
   }
-
+  
   h1.copy {
     font-size: 3rem;
     font-weight: 700;
@@ -306,7 +343,7 @@ import Carousel from '../components/Carousel.astro'
     letter-spacing: -0.1rem;
     text-shadow: 3px 3px 4px rgba(0, 0, 0, 0.5);
   }
-
+  
   h2.sub-copy {
     margin: 0 auto;
     font-size: 1.2rem;
@@ -315,18 +352,18 @@ import Carousel from '../components/Carousel.astro'
     text-align: center;
     margin-bottom: 2em;
     max-width: 500px;
-
+    
     @media (max-width: 768px) {
       padding: 0 20px;
     }
   }
-
+  
   @media (max-width: 768px) {
     h1.copy {
       font-size: 2.5rem;
     }
   }
-
+  
   @media (max-width: 500px) {
     h1.copy {
       font-size: 2rem;
@@ -337,14 +374,14 @@ import Carousel from '../components/Carousel.astro'
 <script>
   function resizeLogo() {
     const screenWidth = window.innerWidth;
-    const element = document.getElementById('fts-logo');
-
+    const element = document.getElementById('fts-logo')!;
+    
     if(screenWidth < 562) {
       element.dataset.scale = '2x';
     } 
   }
   window.addEventListener('load', resizeLogo);
   window.addEventListener('resize', resizeLogo);
-
-
-  </script>
+  
+  
+</script>
