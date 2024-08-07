@@ -1,12 +1,21 @@
+---
+interface Props {
+  id: string;
+  items: { src: string }[];
+}
+
+const { id, items } = Astro.props;
+---
+
 <div class="carousel-container">
-	<div class="glide">
+	<div id={id} class="glide">
 		<div class="glide__track" data-glide-el="track">
 			<ul class="glide__slides">
-				<li class="glide__slide"><img src="../../public/assets/testimonials/Bruno Noriller.jpeg"></li>
-				<li class="glide__slide"><img src="../../public/assets/testimonials/Gabriel.jpg"></li>
-				<li class="glide__slide"><img src="../../public/assets/testimonials/Gustavo.png"></li>
-				<li class="glide__slide"><img src="../../public/assets/testimonials/Lucas Magno.jpeg"></li>
-				<li class="glide__slide"><img src="../../public/assets/testimonials/Lucas Magno.png"></li>
+				{items.map(item => (
+          <li class="glide__slide">
+            <img src={item.src} />
+          </li>
+        ))}
 			</ul>
 		</div>
 		<div class="glide__arrows" data-glide-el="controls">
@@ -86,6 +95,5 @@
 <!-- <script src="node_modules/@glidejs/glide/dist/glide.min.js"></script> -->
 <script>
 	import Glide from '@glidejs/glide';
-	// alert('Hello from Astro!');
-	new Glide('.glide').mount();
+  new Glide('.glide').mount();
 </script>
