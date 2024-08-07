@@ -33,7 +33,6 @@ const { id, items } = Astro.props;
 
 .carousel-container {
 	display: flex;
-	background: black;
   position: relative;
   width: 500px;
 
@@ -95,5 +94,9 @@ const { id, items } = Astro.props;
 <!-- <script src="node_modules/@glidejs/glide/dist/glide.min.js"></script> -->
 <script>
 	import Glide from '@glidejs/glide';
-  new Glide('.glide').mount();
+
+	// new Glide('#testimonials-carousel').mount();
+	// new Glide('#socialproof-carousel').mount();
+
+	new Glide('.glide').mount();
 </script>
