@@ -35,7 +35,7 @@ const { id, items } = Astro.props;
 	display: flex;
   position: relative;
   width: 500px;
-  
+
   @media(max-width: 480px) {
     width: 300px;
   }
@@ -104,7 +104,7 @@ const { id, items } = Astro.props;
     type: 'carousel',  // Or 'slider' depending on your use case
     startAt: 0,        // Start at the first slide
     perView: 1,        // Number of slides to show per view
-    autoplay: 3000,    // Autoplay interval in milliseconds (3000ms = 3 seconds)
+    autoplay: 5000,    // Autoplay interval in milliseconds (3000ms = 3 seconds)
     hoverpause: true   // Pause on hover
   }).mount({ Controls, Autoplay });
 
