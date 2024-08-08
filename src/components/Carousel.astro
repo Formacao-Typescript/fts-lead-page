@@ -100,12 +100,26 @@ const { id, items } = Astro.props;
 	import Glide, { Controls, Autoplay } from '@glidejs/glide/dist/glide.modular.esm';
 	// new Glide('#testimonials-carousel').mount();
 	// new Glide('#socialproof-carousel').mount();
-  new Glide('.glide', {
-    type: 'carousel',  // Or 'slider' depending on your use case
-    startAt: 0,        // Start at the first slide
-    perView: 1,        // Number of slides to show per view
-    autoplay: 5000,    // Autoplay interval in milliseconds (3000ms = 3 seconds)
-    hoverpause: true   // Pause on hover
+
+  // FIXME: '.glide' selector only works for the first, and using the Astro.props.id doesn't work 
+  // even as a data-attribute , so there's no way of identifying the carousel properly
+  // a solution would be moving the glide import to the main layout, buuut
+  // since the project is small, keeping the logic into the main component doesn't seem like a bad idea
+  
+  new Glide('#testimonials-carousel', {
+    type: 'carousel',  // Or 'slider' 
+    startAt: 0,        
+    perView: 1,        
+    autoplay: 7000,    
+    hoverpause: true   
   }).mount({ Controls, Autoplay });
 
+  new Glide('#socialproof-carousel', {
+    type: 'carousel',  // Or 'slider' 
+    startAt: 0,        
+    perView: 1,        
+    autoplay: 10_000,  
+    hoverpause: true   
+  }).mount({ Controls, Autoplay });
+  
 </script>
