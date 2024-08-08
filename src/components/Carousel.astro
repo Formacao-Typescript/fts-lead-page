@@ -35,6 +35,10 @@ const { id, items } = Astro.props;
 	display: flex;
   position: relative;
   width: 500px;
+  
+  @media(max-width: 480px) {
+    width: 300px;
+  }
 
   .glide__slides {
     img {
