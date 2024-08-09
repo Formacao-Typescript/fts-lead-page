@@ -1,7 +1,6 @@
 ---
 import FTSLogo from '../components/FTSLogo.astro'
 import FancyBackground from '../components/FancyBackground.astro'
-import Footer from '../components/Footer.astro'
 import Layout from '../layouts/Layout.astro'
 ---
 
@@ -244,7 +243,7 @@ import Layout from '../layouts/Layout.astro'
 <script>
   function resizeLogo() {
     const screenWidth = window.innerWidth
-    const element = document.getElementById('fts-logo')
+    const element = document.getElementById('fts-logo')!
 
     if (screenWidth < 562) {
       element.dataset.scale = '2x'
