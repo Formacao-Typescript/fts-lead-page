@@ -245,7 +245,7 @@ import Layout from '../layouts/Layout.astro'
     const screenWidth = window.innerWidth
     const element = document.getElementById('fts-logo')!
 
-    if (screenWidth < 562) {
+    if (screenWidth < 562 && element) {
       element.dataset.scale = '2x'
     }
   }
